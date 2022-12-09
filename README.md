@@ -1,31 +1,34 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# BATTLESHIP GAME PROJECT 3
 
-Welcome mariaarnesson,
+![game](../battleship_game_project3/assets/image/game.png)
+![boats](../battleship_game_project3/assets/image/boats.png)
 
-This is the Code Institute student template for deploying your third portfolio project, the Python command-line project. The last update to this file was: **August 17, 2021**
+# Introduction
+This is a project showing a game programmed with Python. The game is called battleship and in this case, we are competing against the computer. 
+# How to play 
+In this game a player have access to two game boards. First, the player have to place the ships on a game board. And afterwords shuold guess where the ships are placed on the opponent's game board. 
 
-## Reminders
+![board-game](../battleship_game_project3/assets/image/game-board.png)
+There are 5 ships named: Carrier, Battleship, Cruiser, Submarine, Destroyer. All of the them are on the same size.
 
-* Your code must be placed in the `run.py` file
-* Your dependencies must be placed in the `requirements.txt` file
-* Do not edit any of the other files or your code may not deploy properly
+![table](../battleship_game_project3/assets/image/table.png)
+Guessed ships are marked with an 'X'.The game ends when all the ships have been guessed.
 
-## Creating the Heroku app
 
-When you create the app, you will need to add two buildpacks from the _Settings_ tab. The ordering is as follows:
+# Validator Testing 
+# Credits
+- background-image [Pexel]('https://www.pexels.com/sv-se/foto/'hav-himmel-vatten-moln-445363/)
 
-1. `heroku/python`
-2. `heroku/nodejs`
+- I was inspired by this video to create the table of the ships: https://www.youtube.com/watch?v=OkB7JqlkTBU&t=1057s
 
-You must then create a _Config Var_ called `PORT`. Set this to `8000`
+- I used template for Python [Project 3 Teplate](https://github.com/Code-Institute-Org/python-essentials-template)
 
-If you have credentials, such as in the Love Sandwiches project, you must create another _Config Var_ called `CREDS` and paste the JSON into the value field.
+- I used this website to write my first code in Python https://www.programiz.com/python-programming/online-compiler/
 
-Connect your GitHub repository and deploy as normal.
 
-## Constraints
+Background Image from pexels.com
+pycodestyle - PEP8 validation
+Project template - Code Institute
+python online
 
-The deployment terminal is set to 80 columns by 24 rows. That means that each line of text needs to be 80 characters or less otherwise it will be wrapped onto a second line.
 
------
-Happy coding!
