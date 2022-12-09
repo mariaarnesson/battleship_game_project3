@@ -1,7 +1,7 @@
 # BATTLESHIP GAME PROJECT 3
 
-![game](../battleship_game_project3/assets/image/game.png)
-![boats](../battleship_game_project3/assets/image/boats.png)
+![game](assets/image/game.png)
+![boats](assets/image/boats.png)
 
 # Introduction
 This is a project showing a game programmed with Python. The game is called battleship and in this case, we are competing against the computer. 
