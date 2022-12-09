@@ -42,4 +42,59 @@ def create_ships():
 
     return int(row) -1, letters_to_numbers[column]    
 
-def print_board(board):    
+def print_board(board): 
+    print('||A|B|C|D|E|F|G')  
+
+    row_number = 1
+    for row in board:
+        print('%d|%s|' % (row_number, '|'.join(row)))
+
+        row_number = row_number + 1
+
+# loop for 5 ships
+for n in range(5):
+    print('Please, place the ship ', n + 1, 'on you game-board ')
+    row_number, column_number = create_ships() 
+
+    if board[row_number][column_number] == 'X':
+        print('There is already a ship in this place!')
+
+        board[row_number][column_number] = 'X'
+        print_board(board)
+
+# the other one game-board 
+guesses_board = [
+    ['_', '_', '_', '_', '_', '_', '_'],
+    ['_', '_', '_', '_', '_', '_', '_'],
+    ['_', '_', '_', '_', '_', '_', '_'],
+    ['_', '_', '_', '_', '_', '_', '_'],
+    ['_', '_', '_', '_', '_', '_', '_'],
+    ['_', '_', '_', '_', '_', '_', '_'],
+    ['_', '_', '_', '_', '_', '_', '_'],
+
+]   
+
+guesses = 0
+while guesses < 5:
+    print('Guess locations of the ships')
+    row_number, column_number = create_ships()
+
+    if guesses_board[row_number][column_number] != '_':
+        print('You have already guessed that place!')
+        continue
+
+    if board[row_number][column_number] == 'X':
+        print('HIT!')
+        guesses_board[row_number][column_number] ='X'
+        guesses = guesses + 1
+    else 
+        guesses_board[row_number][column_number] = 'o'
+        print('MISS!')
+
+    print_board(guesses_board)        
+
+
+
+
+
+
