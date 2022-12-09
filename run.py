@@ -129,15 +129,16 @@ def print_board(board):
 
 # loop for 5 ships
 for n in range(5):
-    print('PLEASE, PLACE THE SHIP ', n + 1, 'ON YOUR GAME-BOARD ')
-    row_number, column_number = create_ships() 
+    print('PLEASE, PLACE THE SHIP ', n + 1, 'ON YOUR GAME-BOARD')
+    row_number, column_number = create_ships()
 
+    # Check that there are no repeats
     if board[row_number][column_number] == 'X':
         print('There is already a ship in this place!')
 
-        board[row_number][column_number] = 'X'
-        print_board(board)
-
+    board[row_number][column_number] = 'X'
+    print_board(board)
+    
 # the other one game-board 
 guesses_board = [
     ['_', '_', '_', '_', '_', '_', '_'],
