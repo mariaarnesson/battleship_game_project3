@@ -78,20 +78,16 @@ print('      ______________________________________________________' )
 from itertools import zip_longest
 
 number = ['   ','  1','  2','  3',' 4', ' 5']
-boats = ['SHIP NAME', '  Carier', '  Battleship', '  Destroyer', '  Submarine', '  Cruiser']
-scale = ['   SIZE', '   |1|', '  |1|', '   |1|', '    |1|', '    |1|']
- 
-for number, boats, scale in zip_longest(number, boats, scale) 
-    print('__________________________________')
+boats = ['SHIP NAME','  Carrier','  Battleship','  Destroyer', '  Submarine', '   Cruiser']
+scale = ['    SIZE','     |1|','  |1|','   |1|', '    |1|','     |1|']
+
+
+for number,boats, scale,  in zip_longest(number,boats,scale):
+    
+    print('______________________________')
     print(number, boats, scale)
-    print('___________________________________')
-
-
-
-
-
-
-
+    print('______________________________')
+    
 
 #create a game board
 
@@ -172,7 +168,25 @@ while guesses < 5:
         print("MISS!")    
     
 
-    print_board(guesses_board)        
+    print_board(guesses_board)   
+
+print('GAME OVER!')
+print('                ___________________________')
+print('               |       GAME OVER!          |')
+print('               | Thank you for plaing      |')
+print('                ___________________________\n')
+print('                      ((  (( ))  ))  ')
+print('                   (((( ( (    )) ))      ')
+print('                  ((/   ( (     ))|) ))     ')
+print('                 (( | _  \/  _  \/| )) ))    ')
+print('                ))  | 0      0    |  ))((    ')
+print('                ))) )     _      / (((( ))    ')
+print('               ((  ( (    __    /((((((((     ')
+print('                (( ) )  \ ___ / )) ))((\/     ')
+print('                \/ \/ ( ( |  |  )) \/((       ')
+print('                       \/ |  |      \/    ') 
+               
+
 
 
 
