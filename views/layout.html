@@ -126,6 +126,7 @@
         .xterm.enable-mouse-events {
             /* When mouse events are enabled (eg. tmux), revert to the standard pointer cursor */
             cursor: default;
+            
         }
 
         .xterm.xterm-cursor-pointer {
@@ -176,7 +177,7 @@
         }
 
         @media (max-width: 320px) {
-    .xterm {
+    .xterm.enable-mouse-events {
         height: 70vh;
     }
     </style>
