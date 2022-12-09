@@ -8,10 +8,10 @@ This is a project showing a game programmed with Python. The game is called batt
 # How to play 
 In this game a player have access to two game boards. First, the player have to place the ships on a game board. And afterwords shuold guess where the ships are placed on the opponent's game board. 
 
-![board-game](../battleship_game_project3/assets/image/game-board.png)
+![board-game](assets/image/game-board.png)
 There are 5 ships named: Carrier, Battleship, Cruiser, Submarine, Destroyer. All of the them are on the same size.
 
-![table](../battleship_game_project3/assets/image/table.png)
+![table](assets/image/table.png)
 Guessed ships are marked with an 'X'.The game ends when all the ships have been guessed.
 
 
