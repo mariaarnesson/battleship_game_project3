@@ -3,9 +3,9 @@ import random
 def main_menu():
     print('WELCOME TO BATTLESHIP GAME \n')
 
-print('_______________________________________________')
+print('______________________________________________________________________________________________________________________')
 print('    Hello and Welcome to Battleshipgame!')
-print('_______________________________________________')
+print('______________________________________________________________________________________________________________________')
 
 print('\n')
 print('                 /|| ')
@@ -57,21 +57,21 @@ print('                                             \n')
 input('Press Enter to continue')
 main_menu()
 
-print('__________________________________________')
-print('__________________________________________')
+print('______________________________________________________________________________________________________________________')
+print('______________________________________________________________________________________________________________________')
 print('           BATTLESHIP GAME                ')
-print('__________________________________________')
-print('__________________________________________')
+print('______________________________________________________________________________________________________________________')
+print('______________________________________________________________________________________________________________________')
 
 print('      ______________________________________________________')
 print('     |           WELCOME TO MY GAME CALLED BATTLESHIP!      |')
 print('     |                                                      |')
 print('     |  You have 5 ships and you can freely place them on   |')
-print('     |  your board.To do this, you have to decide which     |')
+print('     |  your board. To do this, you have to decide which    |')
 print('     | column (marked with the letters A-H) and row (marked |')
 print('     | with the numbers 1-7) you will place them. Afterwards|')
-print('     | you need to guess the enemy ships placed on a another|')
-print('     | game board.                                          |')
+print("     | you need to guess the computer's ships placed on a   |")
+print('     | another game board.                                  |')
 print('      ______________________________________________________' )
 
 
@@ -138,7 +138,7 @@ for n in range(5):
 
     board[row_number][column_number] = 'X'
     print_board(board)
-    
+
 # the other one game-board 
 guesses_board = [
     ['_', '_', '_', '_', '_', '_', '_'],
@@ -153,7 +153,9 @@ guesses_board = [
 
 guesses = 0
 while guesses < 5:
-    print('Guess locations of the ships')
+    print('_________________________________________________________________________________________________________')
+    print("   GUESS LOCATIONS OF THE SHIPS ON THE COMPUTER'S GAME BOARD")
+    print('_________________________________________________________________________________________________________')
     row_number, column_number = create_ships()
 
     if guesses_board[row_number][column_number] != '_':
