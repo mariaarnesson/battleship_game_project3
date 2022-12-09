@@ -4,7 +4,7 @@ def main_menu():
     print('WELCOME TO BATTLESHIP GAME \n')
 
 print('_______________________________________________')
-print('    Hello and welcome to Battleshipgame!')
+print('    Hello and Welcome to Battleshipgame!')
 print('_______________________________________________')
 
 print('\n')
@@ -35,6 +35,28 @@ print('                  \ // ///  /////   /////  // /')
 print('                   \                         / ')
 print('                    \_______________________/ ')
 print('                                                  \n')
+print('                      /                             ')
+print('                     / |                                  ')
+print('                    /  |\                                ')
+print('           _______ /  /| \                              ')
+print('          /______//  / |  \                       ')
+print('         /______//  /  |   /\                         ')
+print('                /  /   | //  \                          ')
+print('               /  /    ///    \           ')
+print('              /  /   ////      \              ')
+print('             /  /  /////        \                        ')
+print('            /  / ///// |         \  ')
+print('           /  //////// |          \  ')
+print('          /  //_/_/_/  |          |   ')
+print('          /  //_/_/_/  |          |   ')
+print('     ___/__/___| |__\__|_________/  ')
+print('     \__________________________/  ')
+print('      \________________________/    ')
+print('       \______________________/  ')
+print('                                             \n')
+input('Press Enter to continue')
+main_menu()
+
 
 
 
