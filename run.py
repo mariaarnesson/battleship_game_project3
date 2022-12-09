@@ -1,8 +1,29 @@
 import random
 
 def main_menu():
+    print('WELCOME TO BATTLESHIP GAME \n')
 
-main_menu()
+print('_______________________________________________')
+print('    Hello and welcome to Battleshipgame!')
+print('_______________________________________________')
+
+print('\n')
+print('                 /|| ')
+print('                / ||_\  ')  
+print('               /  ||__\  ')
+print('              /   ||___\  ')
+print('             /    ||____\  ')
+print('            /     ||_____\  ')
+print('           /      ||______\  ')
+print('          /       ||_______\  ')  
+print('         /        ||        \   ')
+print('       _/_________||_________\________ ')
+print('       \_____________________________/      ')
+print('        \___________________________/  ')
+print('         \_________________________/   \n')
+
+
+
 
 #create a game board
 
@@ -16,16 +37,7 @@ board = [
     ['_', '_', '_', '_', '_', '_', '_'],
 ]
 
-letters_to_numbers = {
-    'A' = 0,
-    'B' = 1,
-    'C' = 2,
-    'D' = 3,
-    'E' = 4,
-    'F' = 5,
-    'G' = 6
-}
-
+letters_to_numbers = {'A':0, 'B':1, 'C':2, 'D':3, 'E':4, 'F':5, 'G':6}
 
 
 def create_ships():
@@ -35,7 +47,7 @@ def create_ships():
         print('Incorrect! You should choose A, B, C, D, E, F or G')
         column = input('Please, choose a letter between A-G')
 
-    row = input('Please, choose the row 1-7 of the ship')  
+    row = input('Please, choose the row 1-7 of the ship: ')  
     while row not in '1234567':
         print('Incorrect! You should choose 1, 2, 3, 4, 5, 6 or 7')
         row = input('Please, choose a letter between 1-7')  
@@ -53,7 +65,7 @@ def print_board(board):
 
 # loop for 5 ships
 for n in range(5):
-    print('Please, place the ship ', n + 1, 'on you game-board ')
+    print('PLEASE, PLACE THE SHIP ', n + 1, 'ON YOUR GAME-BOARD ')
     row_number, column_number = create_ships() 
 
     if board[row_number][column_number] == 'X':
@@ -87,9 +99,10 @@ while guesses < 5:
         print('HIT!')
         guesses_board[row_number][column_number] ='X'
         guesses = guesses + 1
-    else 
-        guesses_board[row_number][column_number] = 'o'
-        print('MISS!')
+    else:
+        guesses_board[row_number][column_number] = '.'
+        print("MISS!")    
+    
 
     print_board(guesses_board)        
 
