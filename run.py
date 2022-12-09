@@ -57,6 +57,22 @@ print('                                             \n')
 input('Press Enter to continue')
 main_menu()
 
+print('__________________________________________')
+print('__________________________________________')
+print('           BATTLESHIP GAME                ')
+print('__________________________________________')
+print('__________________________________________')
+
+print('      ______________________________________________________')
+print('     |           WELCOME TO MY GAME CALLED BATTLESHIP!      |')
+print('     |                                                      |')
+print('     |  You have 5 ships and you can freely place them on   |')
+print('     |  your board.To do this, you have to decide which     |')
+print('     | column (marked with the letters A-H) and row (marked |')
+print('     | with the numbers 1-7) you will place them. Afterwards|')
+print('     | you need to guess the enemy ships placed on a another|')
+print('     | game board.                                          |')
+print('      ______________________________________________________' )
 
 
 
