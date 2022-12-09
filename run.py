@@ -75,6 +75,21 @@ print('     | game board.                                          |')
 print('      ______________________________________________________' )
 
 
+from itertools import zip_longest
+
+number = ['   ','  1','  2','  3',' 4', ' 5']
+boats = ['SHIP NAME', '  Carier', '  Battleship', '  Destroyer', '  Submarine', '  Cruiser']
+scale = ['   SIZE', '   |1|', '  |1|', '   |1|', '    |1|', '    |1|']
+ 
+for number, boats, scale in zip_longest(number, boats, scale) 
+    print('__________________________________')
+    print(number, boats, scale)
+    print('___________________________________')
+
+
+
+
+
 
 
 
