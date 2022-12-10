@@ -1,7 +1,7 @@
 # BATTLESHIP GAME PROJECT 3
 
 ![game](assets/image/game.png)
-![boats](assets/image/boats.png)
+![boats](assets/image/programiz.png)
 
 # Introduction
 This is a project showing a game programmed with Python. The game is called battleship and in this case, we are competing against the computer. 
@@ -17,7 +17,7 @@ Guessed ships are marked with an 'X'.The game ends when all the ships have been 
 
 # Validator Testing 
 # Credits
-- background-image [Pexel](https://www.pexels.com/sv-se/foto/'hav-himmel-vatten-moln-445363)
+- background-image [Pexel](https://www.pexels.com/sv-se/foto/'hav-himmel-vatten-moln-445363/)
 
 - I was inspired by this video to create the table of the ships: https://www.youtube.com/watch?v=OkB7JqlkTBU&t=1057s
 
@@ -26,9 +26,6 @@ Guessed ships are marked with an 'X'.The game ends when all the ships have been 
 - I used this website to write my first code in Python https://www.programiz.com/python-programming/online-compiler/
 
 
-Background Image from pexels.com
-pycodestyle - PEP8 validation
-Project template - Code Institute
-python online
+
 
 
