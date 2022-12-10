@@ -1,5 +1,6 @@
 # BATTLESHIP GAME PROJECT 3
 
+![responsive](assets/image/responsive.png)
 ![game](assets/image/game.png)
 ![boats](assets/image/programiz.png)
 
@@ -16,6 +17,7 @@ Guessed ships are marked with an 'X'.The game ends when all the ships have been 
 
 
 # Validator Testing 
+![validator](assets/image/validator.png)
 # Credits
 - background-image [Pexel](https://www.pexels.com/sv-se/foto/'hav-himmel-vatten-moln-445363/)
 
