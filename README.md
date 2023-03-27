@@ -2,7 +2,6 @@
 
 ![responsive](assets/image/responsive.png)
 ![game](assets/image/game.png)
-![boats](assets/image/programiz.png)
 
 # Introduction
 (View the live project here)[]
