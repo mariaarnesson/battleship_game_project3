@@ -71,7 +71,13 @@ There are 5 ships named: Carrier, Battleship, Cruiser, Submarine, Destroyer. All
 ![table](assets/image/table.png)
 Guessed ships are marked with an 'X'.The game ends when all the ships have been guessed.
 ## Future Features
+- add size for ships
 # Data Model
+The model class Board has been used. 
+The class Board includes:
+    - board, 
+    - number of ships, 
+    - guessing enemy ships
 # Testing
 ## Bugs
 ### Solved Bugs
