@@ -11,6 +11,21 @@ Battleship game is a Python Terminal Game, which runs in Heroku.
 
 The Battleships game is played on grids on which each player's fleet of battleships are marked. The locations of the fleets are concealed from the other player. Players call shots at the other player's ships, and the objective of the game is to destroy the opposing player's fleet.
 The application provides a working battleships game for a single user to play against the computer. 
+
+# User Experience (UX)
+## User Stories:
+- as a user, I want the computer to set up its own table so I don't know where the ships are.
+
+- as a user, I want to see my board so I can see the hits and misses of my ships.
+
+- as a user, I want to see the game board so I can see my hits and misses.
+
+- as a user, I want to see both boards so I can see everything I need to play.
+
+- as a user, I want to see whose turn it is so I know when it's my turn.
+
+- as a user, I want to know who won.
+
 # How to play 
 
 After pressing on run the game, entering the user's name, the user can see the game instructions and a table showing the size of the ships. The user then places ships on his board by selecting letters in a column and numbers in a row. After placing their ships, the user guesses where the ships are on the computer board. The game ends when the computer or the user guesses where all the ships are.

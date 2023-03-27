@@ -1,4 +1,4 @@
-import random
+from random import randint
 
 def main_menu():
     print('WELCOME TO BATTLESHIP GAME \n')
