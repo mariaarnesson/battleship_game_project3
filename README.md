@@ -5,7 +5,13 @@
 ![boats](assets/image/programiz.png)
 
 # Introduction
-This is a project showing a game programmed with Python. The game is called battleship and in this case, we are competing against the computer. 
+(View the live project here)[]
+This Battleships game is Portfolio Project 3 - Python Essentials created for Diploma in Full Stack Software Development at (Code Institute)[https://codeinstitute.net/se/] . This project is about building a command-line application that allows users to manage a common dataset about a particular domain.
+
+Battleship game is a Python Terminal Game, which runs in Heroku. 
+
+The Battleships game is played on grids on which each player's fleet of battleships are marked. The locations of the fleets are concealed from the other player. Players call shots at the other player's ships, and the objective of the game is to destroy the opposing player's fleet.
+The application provides a working battleships game for a single user to play against the computer. 
 # How to play 
 In this game a player have access to two game boards. First, the player have to place the ships on a game board. And afterwords shuold guess where the ships are placed on the opponent's game board. 
 
