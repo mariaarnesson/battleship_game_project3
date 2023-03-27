@@ -85,6 +85,24 @@ The class Board includes:
 ## Validator Testing 
 ![validator](assets/image/validator.png)
 # Deployment
+
+- This program was deployed to Heroku. The steps to deploy are as follows:
+    - Login to Heroku
+    - In the Heroku, select: Create new app
+    - Enter name of the app
+    - Enter region of the app
+    - Navigate to the Settings tab.
+    - In 'Config Vars' select 'Reveal Config Vars'
+    - Enter 'PORT' as a key to 'Vars' and '8000' as a value
+    - In 'Buildpacks' select 'Add buildpack' and choose python and nodejs.
+    - From the tab on the top, select: Deploy.
+    - Afrerword select Github and connect.
+    - Enter the respository name on Github and select: Search
+    - Click connect button.
+    - In Manual deploy, select the 'Deploy Branch' option
+    - Select 'Open app' on the right hand side of the screen
+    - The app should appear in a new tab on the web browser
+    - The live link can be found here - https://battleship-game.herokuapp.com/
 # Credits
 - background-image [Pexel](https://www.pexels.com/sv-se/foto/'hav-himmel-vatten-moln-445363/)
 
