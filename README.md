@@ -4,7 +4,7 @@
 ![game](assets/image/game.png)
 
 # Introduction
-[View the live project here]()
+[View the live project here](https://battleship-game.herokuapp.com/)
 This Battleships game is Portfolio Project 3 - Python Essentials created for Diploma in Full Stack Software Development at [Code Institute](https://codeinstitute.net/se/) . This project is about building a command-line application that allows users to manage a common dataset about a particular domain.
 
 Battleship game is a Python Terminal Game, which runs in Heroku. 
