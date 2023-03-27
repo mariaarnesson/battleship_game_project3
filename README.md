@@ -15,9 +15,17 @@ There are 5 ships named: Carrier, Battleship, Cruiser, Submarine, Destroyer. All
 ![table](assets/image/table.png)
 Guessed ships are marked with an 'X'.The game ends when all the ships have been guessed.
 
-
-# Validator Testing 
+# Features
+## Existing Features
+## Future Features
+# Data Model
+# Testing
+## Bugs
+### Solved Bugs
+### Remaining Bugs
+## Validator Testing 
 ![validator](assets/image/validator.png)
+# Deployment
 # Credits
 - background-image [Pexel](https://www.pexels.com/sv-se/foto/'hav-himmel-vatten-moln-445363/)
 
