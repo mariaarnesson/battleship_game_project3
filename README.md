@@ -14,9 +14,9 @@ The application provides a working battleships game for a single user to play ag
 
 # User Experience (UX)
 ## User Stories:
-- as a user, I want the computer to set up its own table so I don't know where the ships are.
+- as a user i want the computer to create boards with ships hidden for me.
 
-- as a user, I want to see my board so I can see the hits and misses of my ships.
+- as a user I want the board to be visible to me so I can see which ships are hits and which are misses. 
 
 - as a user, I want to see the game board so I can see my hits and misses.
 
