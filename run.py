@@ -1,98 +1,7 @@
 from random import randint
-
-def main_menu():
-    print('WELCOME TO BATTLESHIP GAME \n')
-print('_______________________________________________________________________')
-print('_______________________________________________________________________')
-print('    Hello and Welcome to Battleshipgame!')
-print('_______________________________________________________________________')
-print('_______________________________________________________________________')
-
-print('\n')
-print('                 /||\ ')
-print('                / ||_\  ')  
-print('               /  ||__\  ')
-print('              /   ||___\  ')
-print('             /    ||____\  ')
-print('            /     ||_____\  ')
-print('           /      ||______\  ')
-print('          /       ||_______\  ')  
-print('         /        ||        \   ')
-print('       _/_________||_________\________ ')
-print('       \_____________________________/      ')
-print('        \___________________________/  ')
-print('         \_________________________/   \n')
-print('                                       \n')
-print('                         ____||__  _____||__  ')
-print('                ____||_ )________( )_________(  ')
-print('               )_______( ____||__  _____||__   ')
-print('                ____||_ )________( )_________(  ')
-print('               )_______()________( )_________( ')
-print('                ____||_  ____||__  _____||__  ')
-print('               )_______()________( )_________( ')
-print('                    ||  )________( )_________( ')
-print('                  __||______||__________||_____ ')
-print('                  \ // ///  /////   /////  // /')
-print('                   \                         / ')
-print('                    \_______________________/ ')
-print('                                                  \n')
-print('                      /                             ')
-print('                     / |                                  ')
-print('                    /  |\                                ')
-print('           _______ /  /| \                              ')
-print('          /______//  / |  \                       ')
-print('         /______//  /  |   /\                         ')
-print('                /  /   | //  \                          ')
-print('               /  /    ///    \           ')
-print('              /  /   ////      \              ')
-print('             /  /  /////        \                        ')
-print('            /  / ///// |         \  ')
-print('           /  //////// |          \  ')
-print('          /  //_/_/_/  |          |   ')
-print('         /  //_/_/_/   |           |   ')
-print('     ___/__/___| |__\__|_________/  ')
-print('     \__________________________/  ')
-print('      \________________________/    ')
-print('       \______________________/  ')
-print('                                             \n')
-name = input('Please, enter your name: ')
-print('Hello', name + '!')
-input('Press Enter to continue')
-main_menu()
-
-print('__________________________________________________________________________')
-print('__________________________________________________________________________')
-print('           BATTLESHIP GAME                ')
-print('__________________________________________________________________________')
-print('__________________________________________________________________________')
-
-print('      ______________________________________________________')
-print('     |           WELCOME TO MY GAME CALLED BATTLESHIP!      |')
-print('     |                                                      |')
-print('     |  You have 5 ships and you can freely place them on   |')
-print('     |  your board. To do this, you have to decide which    |')
-print('     | column (marked with the letters A-H) and row (marked |')
-print('     | with the numbers 1-7) you will place them. Afterwards|')
-print("     | you need to guess the computer's ships placed on a   |")
-print('     | another game board.                                  |')
-print('      ______________________________________________________' )
-
-
 from itertools import zip_longest
 
-number = ['   ','  1','  2','  3',' 4', ' 5']
-boats = ['SHIP NAME','  Carrier','  Battleship','  Destroyer', '  Submarine', '   Cruiser']
-scale = ['    SIZE','     |1|','  |1|','   |1|', '    |1|','     |1|']
 
-
-for number,boats, scale,  in zip_longest(number,boats,scale):
-    
-    print('______________________________')
-    print(number, boats, scale)
-    print('______________________________')
-    
-
-#create a game board
 
 board = [
     ['_', '_', '_', '_', '_', '_', '_'],
@@ -104,7 +13,117 @@ board = [
     ['_', '_', '_', '_', '_', '_', '_'],
 ]
 
+
+# the other one game-board 
+guesses_board = [
+    ['_', '_', '_', '_', '_', '_', '_'],
+    ['_', '_', '_', '_', '_', '_', '_'],
+    ['_', '_', '_', '_', '_', '_', '_'],
+    ['_', '_', '_', '_', '_', '_', '_'],
+    ['_', '_', '_', '_', '_', '_', '_'],
+    ['_', '_', '_', '_', '_', '_', '_'],
+    ['_', '_', '_', '_', '_', '_', '_'],
+
+]   
+
 letters_to_numbers = {'A':0, 'B':1, 'C':2, 'D':3, 'E':4, 'F':5, 'G':6}
+
+
+def main_menu():
+    start_game()
+    play_game()
+    end_game()
+
+
+def start_game():
+    print('WELCOME TO BATTLESHIP GAME \n')
+    print('_______________________________________________________________________')
+    print('_______________________________________________________________________')
+    print('    Hello and Welcome to Battleshipgame!')
+    print('_______________________________________________________________________')
+    print('_______________________________________________________________________')
+
+    print('\n')
+    print('                 /||\ ')
+    print('                / ||_\  ')  
+    print('               /  ||__\  ')
+    print('              /   ||___\  ')
+    print('             /    ||____\  ')
+    print('            /     ||_____\  ')
+    print('           /      ||______\  ')
+    print('          /       ||_______\  ')  
+    print('         /        ||        \   ')
+    print('       _/_________||_________\________ ')
+    print('       \_____________________________/      ')
+    print('        \___________________________/  ')
+    print('         \_________________________/   \n')
+    print('                                       \n')
+    print('                         ____||__  _____||__  ')
+    print('                ____||_ )________( )_________(  ')
+    print('               )_______( ____||__  _____||__   ')
+    print('                ____||_ )________( )_________(  ')
+    print('               )_______()________( )_________( ')
+    print('                ____||_  ____||__  _____||__  ')
+    print('               )_______()________( )_________( ')
+    print('                    ||  )________( )_________( ')
+    print('                  __||______||__________||_____ ')
+    print('                  \ // ///  /////   /////  // /')
+    print('                   \                         / ')
+    print('                    \_______________________/ ')
+    print('                                                  \n')
+    print('                      /                             ')
+    print('                     / |                                  ')
+    print('                    /  |\                                ')
+    print('           _______ /  /| \                              ')
+    print('          /______//  / |  \                       ')
+    print('         /______//  /  |   /\                         ')
+    print('                /  /   | //  \                          ')
+    print('               /  /    ///    \           ')
+    print('              /  /   ////      \              ')
+    print('             /  /  /////        \                        ')
+    print('            /  / ///// |         \  ')
+    print('           /  //////// |          \  ')
+    print('          /  //_/_/_/  |          |   ')
+    print('         /  //_/_/_/   |           |   ')
+    print('     ___/__/___| |__\__|_________/  ')
+    print('     \__________________________/  ')
+    print('      \________________________/    ')
+    print('       \______________________/  ')
+    print('                                             \n')
+    name = input('Please, enter your name: ')
+    print('Hello', name + '!')
+    input('Press Enter to continue')
+
+    print('__________________________________________________________________________')
+    print('__________________________________________________________________________')
+    print('           BATTLESHIP GAME                ')
+    print('__________________________________________________________________________')
+    print('__________________________________________________________________________')
+
+    print('      ______________________________________________________')
+    print('     |           WELCOME TO MY GAME CALLED BATTLESHIP!      |')
+    print('     |                                                      |')
+    print('     |  You have 5 ships and you can freely place them on   |')
+    print('     |  your board. To do this, you have to decide which    |')
+    print('     | column (marked with the letters A-H) and row (marked |')
+    print('     | with the numbers 1-7) you will place them. Afterwards|')
+    print("     | you need to guess the computer's ships placed on a   |")
+    print('     | another game board.                                  |')
+    print('      ______________________________________________________' )
+
+    number = ['   ','  1','  2','  3',' 4', ' 5']
+    boats = ['SHIP NAME','  Carrier','  Battleship','  Destroyer', '  Submarine', '   Cruiser']
+    scale = ['    SIZE','     |1|','  |1|','   |1|', '    |1|','     |1|']
+
+    for number,boats, scale,  in zip_longest(number,boats,scale):
+        
+        print('______________________________')
+        print(number, boats, scale)
+        print('______________________________')
+    
+
+
+
 
 
 def create_ships():
@@ -130,72 +149,58 @@ def print_board(board):
 
         row_number = row_number + 1
 
-# loop for 5 ships
-for n in range(5):
-    print('PLEASE, PLACE THE SHIP ', n + 1, 'ON YOUR GAME-BOARD')
-    row_number, column_number = create_ships()
 
-    # Check that there are no repeats
-    if board[row_number][column_number] == 'X':
-        print('There is already a ship in this place!')
+def play_game():
+    # loop for 5 ships
+    for n in range(5):
+        print('PLEASE, PLACE THE SHIP ', n + 1, 'ON YOUR GAME-BOARD')
+        row_number, column_number = create_ships()
 
-    board[row_number][column_number] = 'X'
-    print_board(board)
+        # Check that there are no repeats
+        if board[row_number][column_number] == 'X':
+            print('There is already a ship in this place!')
 
-# the other one game-board 
-guesses_board = [
-    ['_', '_', '_', '_', '_', '_', '_'],
-    ['_', '_', '_', '_', '_', '_', '_'],
-    ['_', '_', '_', '_', '_', '_', '_'],
-    ['_', '_', '_', '_', '_', '_', '_'],
-    ['_', '_', '_', '_', '_', '_', '_'],
-    ['_', '_', '_', '_', '_', '_', '_'],
-    ['_', '_', '_', '_', '_', '_', '_'],
+        board[row_number][column_number] = 'X'
+        print_board(board)
 
-]   
+    guesses = 0
+    while guesses < 5:
+        print('____________________________________________________________________')
+        print("   GUESS LOCATIONS OF THE SHIPS ON THE COMPUTER'S GAME BOARD")
+        print('____________________________________________________________________')
+        row_number, column_number = create_ships()
 
-guesses = 0
-while guesses < 5:
-    print('____________________________________________________________________')
-    print("   GUESS LOCATIONS OF THE SHIPS ON THE COMPUTER'S GAME BOARD")
-    print('____________________________________________________________________')
-    row_number, column_number = create_ships()
+        if guesses_board[row_number][column_number] != '_':
+            print('You have already guessed that place!')
+            continue
 
-    if guesses_board[row_number][column_number] != '_':
-        print('You have already guessed that place!')
-        continue
+        if board[row_number][column_number] == 'X':
+            print('HIT!')
+            guesses_board[row_number][column_number] ='X'
+        else:
+            guesses_board[row_number][column_number] = '.'
+            print("MISS!")    
+        
 
-    if board[row_number][column_number] == 'X':
-        print('HIT!')
-        guesses_board[row_number][column_number] ='X'
-        guesses = guesses + 1
-    else:
-        guesses_board[row_number][column_number] = '.'
-        print("MISS!")    
-    
+        print_board(guesses_board)  
+        guesses = guesses + 1 
 
-    print_board(guesses_board)   
-
-print('GAME OVER!')
-print('                ___________________________')
-print('               |       GAME OVER!          |')
-print('               | Thank you for plaing      |')
-print('                ___________________________\n')
-print('                      ((  (( ))  ))  ')
-print('                   (((( ( (    )) ))      ')
-print('                  ((/   ( (     ))|) ))     ')
-print('                 (( | _  \/  _  \/| )) ))    ')
-print('                ))  | 0      0    |  ))((    ')
-print('                ))) )     _      / (((( ))    ')
-print('               ((  ( (    __    /((((((((     ')
-print('                (( ) )  \ ___ / )) ))((\/     ')
-print('                \/ \/ ( ( |  |  )) \/((       ')
-print('                       \/ |  |      \/    ') 
-               
+def end_game():
+    print('GAME OVER!')
+    print('                ___________________________')
+    print('               |       GAME OVER!          |')
+    print('               | Thank you for plaing      |')
+    print('                ___________________________\n')
+    print('                      ((  (( ))  ))  ')
+    print('                   (((( ( (    )) ))      ')
+    print('                  ((/   ( (     ))|) ))     ')
+    print('                 (( | _  \/  _  \/| )) ))    ')
+    print('                ))  | 0      0    |  ))((    ')
+    print('                ))) )     _      / (((( ))    ')
+    print('               ((  ( (    __    /((((((((     ')
+    print('                (( ) )  \ ___ / )) ))((\/     ')
+    print('                \/ \/ ( ( |  |  )) \/((       ')
+    print('                       \/ |  |      \/    ') 
 
 
-
-
-
-
-
+main_menu()

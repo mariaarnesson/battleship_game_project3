@@ -92,8 +92,7 @@ The class Board includes:
     - Enter name of the app
     - Enter region of the app
     - Navigate to the Settings tab.
-    - In 'Config Vars' select 'Reveal Config Vars'
-    - Enter 'PORT' as a key to 'Vars' and '8000' as a value
+    - In 'Config Vars' select 'PORT' as a key to and '8000' as a value
     - In 'Buildpacks' select 'Add buildpack' and choose python and nodejs.
     - From the tab on the top, select: Deploy.
     - Afrerword select Github and connect.
