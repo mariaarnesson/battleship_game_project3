@@ -25,5 +25,17 @@
 
 ### Test Cases and Results
 
+1. Start Game:
+- After pressing 'RUN PROGRAM':
+    - The introductory text is shown.
+    - The drawing of a ship is shown.
+    - The text 'Please, enter your name:' is shown.
+        - After pressing a name, the following message is displayed: 'Hello ...!'
+    - After entering a name, the following message is displayed:'Press Enter to continue'.
+        - After pressing any other key on the keyboard, the game does not start.
+        - After pressing enter, game instructions and a table with the number of ships are shown.
+
+
+
 
 
