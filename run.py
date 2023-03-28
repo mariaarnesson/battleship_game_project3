@@ -46,21 +46,6 @@ def start_game():
     print('    Hello and Welcome to Battleshipgame!')
     print('_________________________________________')
     print('_________________________________________')
-
-    print('\n')
-    print('                 /||\ ')
-    print('                / ||_\  ')  
-    print('               /  ||__\  ')
-    print('              /   ||___\  ')
-    print('             /    ||____\  ')
-    print('            /     ||_____\  ')
-    print('           /      ||______\  ')
-    print('          /       ||_______\  ')  
-    print('         /        ||        \   ')
-    print('       _/_________||_________\________ ')
-    print('       \_____________________________/      ')
-    print('        \___________________________/  ')
-    print('         \_________________________/   \n')
     print('                                       \n')
     print('                         ____||__  _____||__  ')
     print('                ____||_ )________( )_________(  ')
@@ -71,29 +56,9 @@ def start_game():
     print('               )_______()________( )_________( ')
     print('                    ||  )________( )_________( ')
     print('                  __||______||__________||_____ ')
-    print('                  \ // ///  /////   /////  // /')
-    print('                   \                         / ')
-    print('                    \_______________________/ ')
-    print('                                                  \n')
-    print('                      /                             ')
-    print('                     / |                                  ')
-    print('                    /  |\                                ')
-    print('           _______ /  /| \                              ')
-    print('          /______//  / |  \                       ')
-    print('         /______//  /  |   /\                         ')
-    print('                /  /   | //  \                          ')
-    print('               /  /    ///    \           ')
-    print('              /  /   ////      \              ')
-    print('             /  /  /////        \ ')
-    print('            /  / ///// |         \  ')
-    print('           /  //////// |          \  ')
-    print('          /  //_/_/_/  |          |   ')
-    print('         /  //_/_/_/   |           |   ')
-    print('     ___/__/___| |__\__|_________/  ')
-    print('     \__________________________/  ')
-    print('      \________________________/    ')
-    print('       \______________________/  ')
-    print('                                             \n')
+    print('                  ___________________________   \n')
+    print('                     _____________________')
+    print('                     ____________________     ')
     name = input('Please, enter your name: ')
     print('Hello', name + '!')
     input('Press Enter to continue')
@@ -113,13 +78,13 @@ def start_game():
     print('     | with the numbers 1-7) you will place them. Afterwards|')
     print("     | you need to guess the computer's ships placed on a   |")
     print('     | another game board.                                  |')
-    print('      ______________________________________________________' )
 
     number = ['   ', '  1', '  2', '  3', ' 4',  ' 5']
     boats = ['SHIP NAME', 'Carrier', 'Battleship', 'Destroyer', 'Submarine', 'Cruiser']
     scale = ['    SIZE', '     |1|', '  |1|', '   |1|', '    |1|', '     |1|']
 
-    for number, boats, scale,  in zip_longest(number, boats, scale):
+    for number, boats, scale,
+    in zip_longest(number, boats, scale):
         print('______________________________')
         print(number, boats, scale)
         print('______________________________')
@@ -131,18 +96,15 @@ def create_ships():
     while column not in 'ABCDEFG':
         print('Incorrect! You should choose A, B, C, D, E, F or G')
         column = input('Please, choose a letter between A-G')
-        
-    row = input('Please, choose the row 1-7 of the ship: ')  
+    row = input('Please, choose the row 1-7 of the ship: ')
     while row not in '1234567':
         print('Incorrect! You should choose 1, 2, 3, 4, 5, 6 or 7')
-        
-        row = input('Please, choose a letter between 1-7')  
-
-    return int(row) -1, letters_to_numbers[column]    
+        row = input('Please, choose a letter between 1-7')
+    return int(row)-1, letters_to_numbers[column]
 
 
-def print_board(board): 
-    print('||A|B|C|D|E|F|G')  
+def print_board(board):
+    print('||A|B|C|D|E|F|G')
 
     row_number = 1
     for row in board:
@@ -177,14 +139,12 @@ def play_game():
 
         if board[row_number][column_number] == 'X':
             print('HIT!')
-            guesses_board[row_number][column_number] ='X'
-            
+            guesses_board[row_number][column_number] = 'X'
         else:
             guesses_board[row_number][column_number] = '.'
-            print("MISS!")    
-
-        print_board(guesses_board)  
-        guesses = guesses + 1 
+            print('MISS!')
+        print_board(guesses_board)
+        guesses = guesses + 1
 
 
 def end_game():
@@ -193,16 +153,6 @@ def end_game():
     print('               |       GAME OVER!          |')
     print('               | Thank you for plaing      |')
     print('                ___________________________\n')
-    print('                      ((  (( ))  ))  ')
-    print('                   (((( ( (    )) ))      ')
-    print('                  ((/   ( (     ))|) ))     ')
-    print('                 (( | _  \/  _  \/| )) ))    ')
-    print('                ))  | 0      0    |  ))((    ')
-    print('                ))) )     _      / (((( ))    ')
-    print('               ((  ( (    __    /((((((((     ')
-    print('                (( ) )  \ ___ / )) ))((\/     ')
-    print('                \/ \/ ( ( |  |  )) \/((       ')
-    print('                       \/ |  |      \/    ') 
 
 
 main_menu()
