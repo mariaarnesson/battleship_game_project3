@@ -10,10 +10,9 @@ board = [
     ['_', '_', '_', '_', '_', '_', '_'],
     ['_', '_', '_', '_', '_', '_', '_'],
     ['_', '_', '_', '_', '_', '_', '_'],
-]
+    ]
 
 
-# the other one game-board 
 guesses_board = [
     ['_', '_', '_', '_', '_', '_', '_'],
     ['_', '_', '_', '_', '_', '_', '_'],
@@ -22,10 +21,16 @@ guesses_board = [
     ['_', '_', '_', '_', '_', '_', '_'],
     ['_', '_', '_', '_', '_', '_', '_'],
     ['_', '_', '_', '_', '_', '_', '_'],
-
-]   
-
-letters_to_numbers = {'A':0, 'B':1, 'C':2, 'D':3, 'E':4, 'F':5, 'G':6}
+    ]
+letters_to_numbers = [
+    'A':0,
+    'B':1,
+    'C':2,
+    'D':3,
+    'E':4,
+    'F':5,
+    'G':6
+    ]
 
 
 def main_menu():
@@ -79,7 +84,7 @@ def start_game():
     print('                /  /   | //  \                          ')
     print('               /  /    ///    \           ')
     print('              /  /   ////      \              ')
-    print('             /  /  /////        \                        ')
+    print('             /  /  /////        \ ')
     print('            /  / ///// |         \  ')
     print('           /  //////// |          \  ')
     print('          /  //_/_/_/  |          |   ')
@@ -110,19 +115,14 @@ def start_game():
     print('     | another game board.                                  |')
     print('      ______________________________________________________' )
 
-    number = ['   ','  1','  2','  3',' 4', ' 5']
-    boats = ['SHIP NAME','  Carrier','  Battleship','  Destroyer', '  Submarine', '   Cruiser']
-    scale = ['    SIZE','     |1|','  |1|','   |1|', '    |1|','     |1|']
+    number = ['   ', '  1', '  2', '  3', ' 4',  ' 5']
+    boats = ['SHIP NAME', 'Carrier', 'Battleship', 'Destroyer', 'Submarine', 'Cruiser']
+    scale = ['    SIZE', '     |1|', '  |1|', '   |1|', '    |1|', '     |1|']
 
-    for number,boats, scale,  in zip_longest(number,boats,scale):
-        
+    for number, boats, scale,  in zip_longest(number, boats, scale):
         print('______________________________')
         print(number, boats, scale)
         print('______________________________')
-    
-
-
-
 
 
 def create_ships():
@@ -131,13 +131,15 @@ def create_ships():
     while column not in 'ABCDEFG':
         print('Incorrect! You should choose A, B, C, D, E, F or G')
         column = input('Please, choose a letter between A-G')
-
+        
     row = input('Please, choose the row 1-7 of the ship: ')  
     while row not in '1234567':
         print('Incorrect! You should choose 1, 2, 3, 4, 5, 6 or 7')
+        
         row = input('Please, choose a letter between 1-7')  
 
     return int(row) -1, letters_to_numbers[column]    
+
 
 def print_board(board): 
     print('||A|B|C|D|E|F|G')  
@@ -176,13 +178,14 @@ def play_game():
         if board[row_number][column_number] == 'X':
             print('HIT!')
             guesses_board[row_number][column_number] ='X'
+            
         else:
             guesses_board[row_number][column_number] = '.'
             print("MISS!")    
-        
 
         print_board(guesses_board)  
         guesses = guesses + 1 
+
 
 def end_game():
     print('GAME OVER!')
