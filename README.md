@@ -72,6 +72,14 @@ There are 5 ships named: Carrier, Battleship, Cruiser, Submarine, Destroyer. All
 Guessed ships are marked with an 'X'.The game ends when all the ships have been guessed.
 ## Future Features
 - add size for ships
+
+# Designe
+- Flow Charts
+
+The diagram below shows the structure of the functions presented in the run.py file:
+
+![flowcharts](assets/image/flowcharts.png)
+
 # Data Model
 The model class Board has been used. 
 The class Board includes:
