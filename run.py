@@ -1,4 +1,4 @@
-from random import randint,
+from random import randint
 from itertools import zip_longest
 
 
@@ -22,18 +22,19 @@ guesses_board = [
     ['_', '_', '_', '_', '_', '_', '_'],
     ['_', '_', '_', '_', '_', '_', '_'],
     ]
-letters_to_numbers = [
-    'A':0,
-    'B':1,
-    'C':2,
-    'D':3,
-    'E':4,
-    'F':5,
-    'G':6
-    ]
+letters_to_numbers = {
+    'A': 0,
+    'B': 1,
+    'C': 2,
+    'D': 3,
+    'E': 4,
+    'F': 5,
+    'G': 6
+    }
 
 
 def main_menu():
+
     start_game()
     play_game()
     end_game()
@@ -83,8 +84,7 @@ def start_game():
     boats = ['SHIP NAME', 'Carrier', 'Battleship', 'Destroyer', 'Submarine', 'Cruiser']
     scale = ['    SIZE', '     |1|', '  |1|', '   |1|', '    |1|', '     |1|']
 
-    for number, boats, scale,
-    in zip_longest(number, boats, scale):
+    for number, boats, scale, in zip_longest(number, boats, scale):
         print('______________________________')
         print(number, boats, scale)
         print('______________________________')

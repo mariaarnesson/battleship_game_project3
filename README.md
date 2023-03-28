@@ -14,6 +14,7 @@ The application provides a working battleships game for a single user to play ag
 
 # User Experience (UX)
 ## User Stories:
+- as a user I want to be welcomed by a start screen with name of the game.
 - as a user i want the computer to create boards with ships hidden for me.
 
 - as a user I want the board to be visible to me so I can see which ships are hits and which are misses. 
