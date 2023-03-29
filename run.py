@@ -81,8 +81,8 @@ def start_game():
     print('     | another game board.                                  |')
 
     number = ['   ', '  1', '  2', '  3', ' 4',  ' 5']
-    boats = ['SHIP NAME', 'Carrier', 'Battleship', 'Destroyer', 'Submarine', 'Cruiser']
-    scale = ['    SIZE', '     |1|', '  |1|', '   |1|', '    |1|', '     |1|']
+    boats = ['', 'Carrier', 'Battleship', 'Destroyer', 'Submarine', 'Cruiser']
+    scale = ['         SIZE', '   |1|', '|1|', ' |1|', '  |1|', '    |1|']
 
     for number, boats, scale, in zip_longest(number, boats, scale):
         print('______________________________')
