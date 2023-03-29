@@ -78,4 +78,7 @@ No error founds on PEP8online.com
 
 # Bugs
 ### Solved Bugs
+
 ### Remaining Bugs
+
+- No bugs remaining. 
