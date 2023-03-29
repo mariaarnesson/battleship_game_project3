@@ -4,16 +4,22 @@
 
 [View the live project here](https://battleship-game.herokuapp.com/)
 
+# Automated Testing
 
-## Bugs
-### Solved Bugs
-### Remaining Bugs
-## Validator Testing 
+
+## Testing Lighthouse 
+![lighthouse](assets/image/lighthouse.png)
+
+## Testing Validator PEP8
+
+
+No error founds on PEP8online.com
+
 ![validator](assets/image/validator.png)
 
 
 
-## Manual Testing
+# Manual Testing
 
 ### Testing User Experience (UX) stories:
 
@@ -69,3 +75,7 @@
 4. End game:
 - After 5 chances to guess the ships on the board, the game ends and the message: 'GAME OVER! Thank you for plaing ' is shown.
 
+
+# Bugs
+### Solved Bugs
+### Remaining Bugs
