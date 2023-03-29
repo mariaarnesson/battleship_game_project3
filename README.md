@@ -88,11 +88,9 @@ The class Board includes:
     - number of ships, 
     - guessing enemy ships
 # Testing
-## Bugs
-### Solved Bugs
-### Remaining Bugs
-## Validator Testing 
-![validator](assets/image/validator.png)
+
+Testing information can be found in separate [testing.md](TESTING.md) file
+
 # Deployment
 
 - This program was deployed to Heroku. The steps to deploy are as follows:

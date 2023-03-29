@@ -3,6 +3,16 @@
 [Main README.md file](README.md)
 
 [View the live project here](https://battleship-game.herokuapp.com/)
+
+
+## Bugs
+### Solved Bugs
+### Remaining Bugs
+## Validator Testing 
+![validator](assets/image/validator.png)
+
+
+
 ## Manual Testing
 
 ### Testing User Experience (UX) stories:
