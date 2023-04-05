@@ -32,10 +32,10 @@ numbers_to_letters = {
     5: 'F',
     6: 'G'
     }
-user_score = 0
+player_score = 0
 computer_score = 0
 
-continue_playing_options = ["enter", "back to start"]
+continue_playing_options = ["ok", "end game"]
 
   # https://www.programiz.com/python-programming/methods/string/title  
   # https://www.programiz.com/python-programming/methods/string/upper
@@ -64,7 +64,8 @@ def start_game():
     print('                     ____________________     ')
     print('___________________________________________')
     print('___________________________________________')
-    print('           BATTLESHIP GAME                ')
+    message = '           BATTLESHIP GAME                '
+    print(message.upper())
     print('___________________________________________')
     print('___________________________________________')
 
@@ -187,10 +188,10 @@ def validate_continue_playing(values):
     try:
         if values not in continue_playing_options:
             print(
-                f"Please press '' or 'back to start', you provided '{values}'."
+                f"Please press 'ok' or 'end game', you provided '{values}'."
                 )
     except:
-        print(f"Sorry ''/'back to start' required, please try again.\n")
+        print(f"Sorry 'ok'/'end game' required, please try again.\n")
         return False
 
     return True
@@ -230,7 +231,7 @@ def play_game():
             guess_board[row][column] = "x"
             turns -= 1
             computer_guess(player_board)
-            user_score += 1
+            player_score += 1
         else:
             print('____________________________________________________')
             print('____________________________________________________')
@@ -250,58 +251,58 @@ def play_game():
             print('____________________________________________________')
             print("The game is now over.")
             break
-        print('_____________________________________________')
-        print('_____________________________________________')
-        print("You have " + str(turns) + " chances left!")
-        print('_____________________________________________')
-        print('_____________________________________________')
-        print(f"{username}'s SCORE: {user_score}"
-                 f" COMPUTER'S SCORE: {computer_score}")
-        print('_____________________________________________')
-        print('_____________________________________________')
-        if turns == 0:
-            print(
-                f"You ran out of turns {username}, the game is over.")
-            print('                ___________________________')
-            print('               |       GAME OVER!          |')
-            print('               | Thank you for plaing      |')
-            print('                ___________________________\n') 
-            print('Press enter to restart')
-            
-            break
-        if count_hit_ships(player_board) == 5:
-            print(
-                f"The computer"
-                " has sunk all of your battleships!")
-            print('                ___________________________')
-            print('               |       GAME OVER!          |')
-            print('               | Thank you for plaing      |')
-            print('                ___________________________\n')  
-            print('Press enter to restart')
-            
-            break
-        if count_hit_ships(guess_board) < 5:
-            continue_playing = input(
-                    "I hope you're enjoying the game so far. if you want to continue, press '', otherwise press 'back to start'. \n").lower()
-            while continue_playing not in continue_playing_options:
-                validate_continue_playing(continue_playing)
-                continue_playing = input(
-                    "I hope you're enjoying the game so far. if you want to continue, press '', otherwise press 'back to start'. \n").lower()
-                   
-            if continue_playing == "" or continue_playing == "":
+            print('_____________________________________________')
+            print('_____________________________________________')
+            print("You have " + str(turns) + " chances left!")
+            print('_____________________________________________')
+            print('_____________________________________________')
+            print(f"||  {username}'s SCORE: {player_score}   || "
+                     f" COMPUTER'S SCORE: {computer_score}  ||")
+            print('_____________________________________________')
+            print('_____________________________________________')
+            if turns == 0:
                 print(
-                    "You have decided to continue playing the game.")
-                continue
-            elif continue_playing == "back to start" or continue_playing == "back to start":
-                print(
-                    "You have decided to finish the game,"
-                    "the game is now over.")
+                    f"You ran out of turns {username}, the game is over.")
+                print('                ___________________________')
+                print('               |       GAME OVER!          |')
+                print('               | Thank you for plaing      |')
+                print('                ___________________________\n') 
+                print('Press enter to restart')
+                
                 break
-            else:
-                print("Please enter 'yes' or 'no'")
+            if count_hit_ships(player_board) == 5:
+                print(
+                    f"The computer"
+                    " has sunk all of your battleships!")
+                print('                ___________________________')
+                print('               |       GAME OVER!          |')
+                print('               | Thank you for plaing      |')
+                print('                ___________________________\n')  
+                print('Press enter to restart')
+                
+                break
+            if count_hit_ships(guess_board) < 5:
                 continue_playing = input(
-                    "Do you want to continue playing? y/n \n")
-                    
+                        "To continue press 'ok' otherwise press 'end game'. \n").lower()
+                while continue_playing not in continue_playing_options:
+                    validate_continue_playing(continue_playing)
+                    continue_playing = input(
+                        "To continue press 'ok' otherwise press 'end game'. \n").lower()
+                       
+                if continue_playing == "ok" or continue_playing == "ok":
+                    print(
+                        "You have decided to continue playing the game.")
+                    continue
+                elif continue_playing == "end game" or continue_playing == "end game":
+                    print(
+                        "You have decided to finish the game,"
+                        "the game is now over.")
+                    break
+                else:
+                    print("Please enter 'yes' or 'no'")
+                    continue_playing = input(
+                        "Do you want to continue playing? y/n \n")
+                        
 def main():
     start_game()
     play_game()
