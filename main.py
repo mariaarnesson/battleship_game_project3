@@ -72,12 +72,11 @@ def start_game():
     print('      ______________________________________________________')
     print('     |           WELCOME TO MY GAME CALLED BATTLESHIP!      |')
     print('     |                                                      |')
-    print('     |  You have 5 ships and you can freely place them on   |')
-    print('     |  your board. To do this, you have to decide which    |')
-    print('     | column (marked with the letters A-H) and row (marked |')
-    print('     | with the numbers 1-7) you will place them. Afterwards|')
-    print("     | you need to guess the computer's ships placed on a   |")
-    print('     | another game board.                                  |')
+    print('     |  You have 5 ships that are already placed on your    |')
+    print('     |  game board. Now you have to guess where the ships   |')
+    print('     |are placed on the computer game board. To do this, you|')
+    print ('    |have to decide the ships column and row ( marked with |')
+    print('     | letters A-H and numbers 1-7).                         |')
     print("     | You have 10 turns to find all of the ships.          |")
     print('      ______________________________________________________')
     number = ['   ', '  1', '  2', '  3', ' 4',  ' 5']
@@ -90,9 +89,9 @@ def start_game():
         print('______________________________')
         
     print("____________________________________")
-    global username
-    username = input("Please, enter your name:\n")
-    while username == "" or username == " ":
+    global name
+    name = input("Please, enter your name:\n")
+    while name == "" or name == " ":
         print("Error! Please, enter your name:")
         username = input("Please enter your name:\n")
         input('Press Enter to continue')
