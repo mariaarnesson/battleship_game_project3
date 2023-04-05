@@ -112,7 +112,30 @@ def print_board(board):
 
         row_number = row_number + 1
 
-
+def get_coor(self):
+        """
+        user will enter coordinates (row and column) for the ship to go
+        """
+        while (True):
+            user_input = input("Please enter coordinates (row,col) ? ")
+            try:
+                # see that user entered 2 values seprated by comma
+                coor = user_input.split(",")
+                if len(coor) != 2:
+                    raise Exception("Invalid entry, too few/many coordinates.");
+                # check that 2 values are integers
+                coor[0] = int(coor[0]) - 1
+                coor[1] = int(coor[1]) - 1
+                # check that values of integers are between 1 and 10 for both coordinates
+                if coor[0] > 9 or coor[0] < 0 or coor[1] > 9 or coor[1] < 0:
+                    raise Exception("Invalid entry. Please use values between 1 to 10 only.")
+                # if everything is ok, return coordinates
+                return coor
+            # if the user enters something different
+            except ValueError:
+                print("Invalid entry. Please enter only numeric values for coordinates")
+            except Exception as e:
+                print(e)
 def play_game():
     # loop for 5 ships
     for n in range(5):
