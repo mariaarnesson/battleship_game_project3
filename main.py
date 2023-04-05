@@ -23,15 +23,22 @@ letters_to_numbers = {
     'G': 6
     }
     
-numbers_to_letters = {0: "A", 1: "B", 2: "C", 3: "D", 4: "E",
-                      5: "F", 6: "G", 7: "H"}    
-
+numbers_to_letters = {
+    0: 'A',
+    1: 'B',
+    2: 'C',
+    3: 'D',
+    4: 'E',
+    5: 'F',
+    6: 'G'
+    }
 user_score = 0
 computer_score = 0
 
 continue_playing_options = ["enter", "back to start"]
 
   # https://www.programiz.com/python-programming/methods/string/title  
+  # https://www.programiz.com/python-programming/methods/string/upper
     
 def start_game(): 
     create_ships(hidden_board)
@@ -112,19 +119,20 @@ def computer_guess(board):
         computer_row = randint(0, 6)
         computer_column = randint(0, 6)
     elif player_board[computer_row][computer_column] == "*":
-        print(f"Your battleship has been hit!")
+        input('Press Enter to continue')
         print(
             f"The computer guessed row {computer_row +1}"
             f" and column {numbers_to_letters[computer_column]}")
         player_board[computer_row][computer_column] = "x"
         computer_score += 1
+        print(f"Your battleship has been hit!")
     else:
-        print(f"The computer missed! {username}, You still have a chance to win!!")
+        input('Press Enter to continue')
         print(
             f"The computer guessed row {computer_row +1}"
             f" and column {numbers_to_letters[computer_column]}")
         player_board[computer_row][computer_column] = "-"
-
+        print(f"The computer missed! {username}, You still have a chance to win!!")
 def get_ship_location():
     print('____________________________________________________________')
     print("   GUESS LOCATIONS OF THE SHIPS ON THE COMPUTER'S GAME BOARD")
@@ -300,5 +308,3 @@ def main():
     
     
 main()
-
-
