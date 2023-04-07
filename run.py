@@ -98,7 +98,7 @@ def computer_guess(board):
         print(
             f"The computer guessed row {computer_row +1}"
             f" and column {numbers_to_letters[computer_column]}")
-        print(f"Your battleship has been hit!")    
+        print("Your battleship has been hit!")    
         player_board[computer_row][computer_column] = "x"
         computer_score += 1
     else:
@@ -131,10 +131,11 @@ def validate_row(values):
         [int(value) for value in values]
         if int(values) < 1 or int(values) > 7:
             print(
-                f"'{values}' is wrong! You should choose 1, 2, 3, 4, 5, 6 or 7"
+                f"'{values}' is wrong!"
             )
-    except ValueError as e:
-        print(f"Please, try again! You should choose 1, 2, 3, 4, 5, 6 or 7.\n")
+    except ValueError:
+        print("Please, try again!")
+        print("You should choose 1, 2, 3, 4, 5, 6 or 7.\n")
         return False
 
     return True
@@ -144,10 +145,11 @@ def validate_column(values):
     try:
         if values not in letters_to_numbers:
             print(
-                f"{values}' is wrong! You should choose A, B, C, D, E, F or G"
+                f"{values}' is wrong!"
                 )
-    except ValueError as e:
-        print(f"Please try again! You should choose A, B, C, D, E, F or G \n")
+    except ValueError:
+        print("Please try again!")
+        print("You should choose A, B, C, D, E, F or G \n")
         return False
 
     return True
@@ -168,8 +170,9 @@ def validate_continue_game(values):
             print(
                 f" '{values}' is wrong! Please press 'ok' or 'end game'."
                 )
-    except ValueError as e:
-        print(f" Try again. Please press 'ok' or 'end game'.\n")
+    except ValueError:
+        print(" Try again.")
+        print(" Please press 'ok' or 'end game'.\n")
         return False
 
     return True
@@ -273,9 +276,9 @@ def play_game():
                     "the game is now over.")
                 break
             else:
-                print("Please enter 'yes' or 'no'")
+                print("Incorrect!!!")
                 continue_game = input(
-                    "Do you want to continue playing? y/n \n")
+                    "You should press 'ok' or 'end game'.\n")
 
 
 def main_menu():
