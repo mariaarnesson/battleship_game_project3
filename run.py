@@ -134,8 +134,8 @@ def validate_row(values):
                 f"'{values}' is wrong! You should choose 1, 2, 3, 4, 5, 6 or 7"
             )
     except
-        print(f"Please, try again! You should choose 1, 2, 3, 4, 5, 6 or 7.\n")
-        return False
+    print(f"Please, try again! You should choose 1, 2, 3, 4, 5, 6 or 7.\n")
+    return False
 
     return True
 
@@ -147,8 +147,8 @@ def validate_column(values):
                 f"{values}' is wrong! You should choose A, B, C, D, E, F or G"
                 )
     except
-        print(f"Please try again! You should choose A, B, C, D, E, F or G \n")
-        return False
+    print(f"Please try again! You should choose A, B, C, D, E, F or G \n")
+    return False
 
     return True
 
@@ -169,8 +169,8 @@ def validate_continue_game(values):
                 f" '{values}' is wrong! Please press 'ok' or 'end game'."
                 )
     except
-        print(f" Try again. Please press 'ok' or 'end game'.\n")
-        return False
+    print(f" Try again. Please press 'ok' or 'end game'.\n")
+    return False
 
     return True
 
@@ -235,8 +235,8 @@ def play_game():
             print("You have " + str(turns) + " chances left!")
             print('_____________________________________________')
             print('_____________________________________________')
-            print(f"||  {name}'s SCORE: {player_score}   || "
-                    f" COMPUTER'S SCORE: {computer_score}  ||")
+            print(f"|| {name}'s SCORE: {player_score} || "
+                  f" COMPUTER'S SCORE: {computer_score} || ")
             print('_____________________________________________')
             print('_____________________________________________')
         if turns == 0:
