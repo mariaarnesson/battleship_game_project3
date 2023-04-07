@@ -32,8 +32,9 @@ continue_game_options = 'ok', 'end game'
 
 
 def start_game():
-    create_ships(hidden_board)
-    create_ships(player_board)
+    """Function start game."""
+    create_random_ships(hidden_board)
+    create_random_ships(player_board)
     text = '    Hello and Welcome to Battleshipgame!'
     print(text.title())
     print('_________________________________________')
@@ -73,6 +74,7 @@ def start_game():
 
 
 def print_board(board):
+    """Function printing board."""
     print("  A|B |C |D |E |F |G")
     row_number = 1
     for row in board:
@@ -80,7 +82,8 @@ def print_board(board):
         row_number += 1
 
 
-def create_ships(board):
+def create_random_ships(board):
+    """Function creating ships."""
     for ship in range(5):
         ship_row, ship_column = randint(0, 6), randint(0, 6)
         while board[ship_row][ship_column] == "*":
@@ -89,6 +92,7 @@ def create_ships(board):
 
 
 def computer_guess(board):
+    """Function guessing computer play board."""
     global computer_score
     computer_row, computer_column = randint(0, 6), randint(0, 6)
     if (player_board[computer_row][computer_column] == "-" or
@@ -102,7 +106,7 @@ def computer_guess(board):
             f" and column {numbers_to_letters[computer_column]}")
         print("Your battleship has been hit!")
         player_board[computer_row][computer_column] = "x"
-        computer_score += 1
+        COMPUTER_SCORE += 1
     else:
         input('Press Enter to continue')
         print(
@@ -113,21 +117,23 @@ def computer_guess(board):
 
 
 def ship_location():
+    """Function locating ship."""
     print("   GUESS LOCATIONS OF THE SHIPS ON THE COMPUTER'S GAME BOARD")
     row = input('Please, choose the row 1-7 of the ship: \n')
     while row not in "1234567" or len(row) > 1 or row == "":
         validate_row(row)
         print('Incorrect! You should choose 1, 2, 3, 4, 5, 6 or 7')
         row = input('Please, choose a number between 1-7\n')
-    column = input('Please, choose some letter between A-G: \n').upper()
+    column = input('Please, choose some letter between A-G: \n')
     while column not in "ABCDEFGH" or len(column) > 1 or column == "":
         validate_column(column)
         print('Incorrect! You should choose A, B, C, D, E, F or G')
-        column = input('Please, choose a letter between A-G \n').upper()
+        column = input('Please, choose a letter between A-G \n')
     return int(row) - 1, letters_to_numbers[column]
 
 
 def validate_row(type):
+    """Function validating row."""
 
     try:
         [int(type) for type in type]
@@ -144,6 +150,7 @@ def validate_row(type):
 
 
 def validate_column(values):
+    """Function validating column."""
     try:
         if values not in letters_to_numbers:
             print(
@@ -158,6 +165,7 @@ def validate_column(values):
 
 
 def hit_ships(board):
+    """Function hitting ships."""
     count = 0
     for row in board:
         for column in row:
@@ -167,6 +175,7 @@ def hit_ships(board):
 
 
 def validate_continue_game(values):
+    """Function contuating game."""
     try:
         if values not in continue_game_options:
             print(
@@ -181,8 +190,9 @@ def validate_continue_game(values):
 
 
 def play_game():
+    """Function playing game."""
     turns = 10
-    global player_score
+    global PLAYER_SCORE
 
     while turns > 0:
         print('_____________________')
@@ -215,7 +225,7 @@ def play_game():
             guess_board[row][column] = "x"
             turns -= 1
             computer_guess(player_board)
-            player_score += 1
+            PLAYER_SCORE += 1
         else:
             print('____________________________________________________')
             print('____________________________________________________')
@@ -240,8 +250,8 @@ def play_game():
         print("You have " + str(turns) + " chances left!")
         print('_____________________________________________')
         print('_____________________________________________')
-        print(f"|| {name}'s SCORE: {player_score} || "
-              f" COMPUTER'S SCORE: {computer_score} || ")
+        print(f"|| {name}'s SCORE: {PLAYER_SCORE} || "
+              f" COMPUTER'S SCORE: {COMPUTER_SCORE} || ")
         print('_____________________________________________')
         print('_____________________________________________')
         if turns == 0:
@@ -284,6 +294,7 @@ def play_game():
 
 
 def main_menu():
+    """Function main menu."""
     start_game()
     play_game()
 
