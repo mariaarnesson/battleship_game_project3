@@ -32,7 +32,7 @@ computer_score = 0
 def start_game():
     create_ships(hidden_board)
     create_ships(player_board)
-    text='    Hello and Welcome to Battleshipgame!'
+    text = '    Hello and Welcome to Battleshipgame!'
     print(text.title())
     print('_________________________________________')
     print('_________________________________________')
@@ -69,6 +69,7 @@ def start_game():
         print("Error! Please, enter your name:")
         name = input("Please enter your name:\n")
 
+
 def create_ships(board):
     for ship in range(5):
         ship_row, ship_column = randint(0, 6), randint(0, 6)
@@ -76,12 +77,14 @@ def create_ships(board):
             ship_row, ship_column = randint(0, 6), randint(0, 6)
         board[ship_row][ship_column] = "*"
 
+
 def print_board(board):
     print("  A|B |C |D |E |F |G")
     row_number = 1
     for row in board:
         print(row_number, "|_".join(row))
-        row_number += 1 
+        row_number += 1
+
 
 def computer_guess(board):
     global computer_score
@@ -104,10 +107,8 @@ def computer_guess(board):
             f"The computer guessed row {computer_row +1}"
             f" and column {numbers_to_letters[computer_column]}")
         print(f" {name}, the computer missed!")
-        player_board[computer_row][computer_column] = "-"    
+        player_board[computer_row][computer_column] = "-"
 
-
-       
 
 def ship_location():
     print("   GUESS LOCATIONS OF THE SHIPS ON THE COMPUTER'S GAME BOARD")
@@ -124,20 +125,20 @@ def ship_location():
     return int(row) - 1, letters_to_numbers[column]
 
 
-
 def validate_row(values):
 
     try:
         [int(value) for value in values]
         if int(values) < 1 or int(values) > 7:
             print(
-                f" '{values}' is wrong! You should choose 1, 2, 3, 4, 5, 6 or 7"
-        )
-    except:
+                f"'{values}' is wrong! You should choose 1, 2, 3, 4, 5, 6 or 7"
+            )
+    except
         print(f"Please, try again! You should choose 1, 2, 3, 4, 5, 6 or 7.\n")
         return False
 
     return True
+
 
 def validate_column(values):
     try:
@@ -145,7 +146,7 @@ def validate_column(values):
             print(
                 f"{values}' is wrong! You should choose A, B, C, D, E, F or G"
                 )
-    except:
+    except
         print(f"Please try again! You should choose A, B, C, D, E, F or G \n")
         return False
 
@@ -160,18 +161,18 @@ def hit_ships(board):
                 count += 1
     return count
 
+
 def validate_continue_game(values):
     try:
         if values not in continue_game_options:
             print(
                 f" '{values}' is wrong! Please press 'ok' or 'end game'."
                 )
-    except:
+    except
         print(f" Try again. Please press 'ok' or 'end game'.\n")
         return False
 
-    return True    
-    
+    return True
 
 
 def play_game():
@@ -244,9 +245,7 @@ def play_game():
             print('                ___________________________')
             print('               |       GAME OVER!          |')
             print('               | Thank you for plaing      |')
-            print('                ___________________________\n') 
-         
-                
+            print('                ___________________________\n')
             break
         if hit_ships(player_board) == 5:
             print(
@@ -254,18 +253,16 @@ def play_game():
             print('                ___________________________')
             print('               |       GAME OVER!          |')
             print('               | Thank you for plaing      |')
-            print('                ___________________________\n')  
+            print('                ___________________________\n')
             print('Press enter to restart')
-                
             break
         if hit_ships(guess_board) < 5:
             continue_game = input(
-                    "To continue press 'ok' otherwise press 'end game'. \n").lower()
+                    "To continue press 'ok' otherwise press 'end game'. \n")
             while continue_game not in continue_game:
                 validate_continue_game(continue_game)
                 continue_game = input(
-                    "To continue press 'ok' otherwise press 'end game'. \n").lower()
-                    
+                    "To continue press 'ok' otherwise press 'end game'. \n")
             if continue_game == "ok" or continue_game == "ok":
                 print(
                     "You have decided to continue playing the game.")
@@ -279,6 +276,8 @@ def play_game():
                 print("Please enter 'yes' or 'no'")
                 continue_game = input(
                     "Do you want to continue playing? y/n \n")
+
+
 def main_menu():
     start_game()
     play_game()
