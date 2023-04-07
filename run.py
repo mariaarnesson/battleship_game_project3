@@ -70,20 +70,20 @@ def start_game():
         name = input("Please enter your name:\n")
 
 
-def create_ships(board):
-    for ship in range(5):
-        ship_row, ship_column = randint(0, 6), randint(0, 6)
-        while board[ship_row][ship_column] == "*":
-            ship_row, ship_column = randint(0, 6), randint(0, 6)
-        board[ship_row][ship_column] = "*"
-
-
 def print_board(board):
     print("  A|B |C |D |E |F |G")
     row_number = 1
     for row in board:
         print(row_number, "|_".join(row))
         row_number += 1
+        
+
+def create_ships(board):
+    for ship in range(5):
+        ship_row, ship_column = randint(0, 6), randint(0, 6)
+        while board[ship_row][ship_column] == "*":
+            ship_row, ship_column = randint(0, 6), randint(0, 6)
+        board[ship_row][ship_column] = "*"
 
 
 def computer_guess(board):
@@ -98,9 +98,9 @@ def computer_guess(board):
         print(
             f"The computer guessed row {computer_row +1}"
             f" and column {numbers_to_letters[computer_column]}")
+        print(f"Your battleship has been hit!")    
         player_board[computer_row][computer_column] = "x"
         computer_score += 1
-        print(f"Your battleship has been hit!")
     else:
         input('Press Enter to continue')
         print(
@@ -133,9 +133,9 @@ def validate_row(values):
             print(
                 f"'{values}' is wrong! You should choose 1, 2, 3, 4, 5, 6 or 7"
             )
-    except
-    print(f"Please, try again! You should choose 1, 2, 3, 4, 5, 6 or 7.\n")
-    return False
+    except ValueError as e:
+        print(f"Please, try again! You should choose 1, 2, 3, 4, 5, 6 or 7.\n")
+        return False
 
     return True
 
@@ -146,9 +146,9 @@ def validate_column(values):
             print(
                 f"{values}' is wrong! You should choose A, B, C, D, E, F or G"
                 )
-    except
-    print(f"Please try again! You should choose A, B, C, D, E, F or G \n")
-    return False
+    except ValueError as e:
+        print(f"Please try again! You should choose A, B, C, D, E, F or G \n")
+        return False
 
     return True
 
@@ -168,9 +168,9 @@ def validate_continue_game(values):
             print(
                 f" '{values}' is wrong! Please press 'ok' or 'end game'."
                 )
-    except
-    print(f" Try again. Please press 'ok' or 'end game'.\n")
-    return False
+    except ValueError as e:
+        print(f" Try again. Please press 'ok' or 'end game'.\n")
+        return False
 
     return True
 
@@ -230,15 +230,15 @@ def play_game():
             print('____________________________________________________')
             print("The game is now over.")
             break
-            print('_____________________________________________')
-            print('_____________________________________________')
-            print("You have " + str(turns) + " chances left!")
-            print('_____________________________________________')
-            print('_____________________________________________')
-            print(f"|| {name}'s SCORE: {player_score} || "
-                  f" COMPUTER'S SCORE: {computer_score} || ")
-            print('_____________________________________________')
-            print('_____________________________________________')
+        print('_____________________________________________')
+        print('_____________________________________________')
+        print("You have " + str(turns) + " chances left!")
+        print('_____________________________________________')
+        print('_____________________________________________')
+        print(f"|| {name}'s SCORE: {player_score} || "
+              f" COMPUTER'S SCORE: {computer_score} || ")
+        print('_____________________________________________')
+        print('_____________________________________________')
         if turns == 0:
             print(
                 f"You ran out of turns {name}, the game is over.")
