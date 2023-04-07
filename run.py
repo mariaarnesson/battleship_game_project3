@@ -66,8 +66,8 @@ def start_game():
     print('     | letters A-H and numbers 1-7).                         |')
     print("     | You have 10 turns to find all of the ships.          |")
     print('      ______________________________________________________')
-    global name
     name = input("Please, enter your name:\n")
+    print(f" Hello {name}!")
     while name == "" or name == " ":
         print("Error! Please, enter your name:")
         name = input("Please enter your name:\n")
@@ -93,7 +93,7 @@ def create_random_ships(board):
 
 def computer_guess(board):
     """Function guessing computer play board."""
-    global computer_score
+    global COMPUTER_SCORE
     computer_row, computer_column = randint(0, 6), randint(0, 6)
     if (player_board[computer_row][computer_column] == "-" or
             player_board[computer_row][computer_column] == "x"):
@@ -112,7 +112,7 @@ def computer_guess(board):
         print(
             f"The computer guessed row {computer_row +1}"
             f" and column {numbers_to_letters[computer_column]}")
-        print(f" The computer missed! {name}, You still have a chance to win!")
+        print(" The computer missed!")
         player_board[computer_row][computer_column] = "-"
 
 
@@ -154,7 +154,7 @@ def validate_column(values):
     try:
         if values not in letters_to_numbers:
             print(
-                f"{values}' is wrong!"
+                f"'{values}' is wrong!"
                 )
     except ValueError:
         print("Please try again!")
@@ -197,7 +197,7 @@ def play_game():
     while turns > 0:
         print('_____________________')
         print('_____________________')
-        print(f"    {name}'s Board")
+        print("    Your Board")
         print('_____________________')
         print('_____________________')
         print_board(player_board)
@@ -213,7 +213,7 @@ def play_game():
         if guess_board[row][column] == "-" or guess_board[row][column] == "x":
             print('_____________________________________________')
             print('_____________________________________________')
-            print("Error! You have already guessed that place!")
+            print("Incorrect! You have already guessed that place!")
             print('_____________________________________________')
             print('_____________________________________________')
         elif hidden_board[row][column] == "*":
@@ -238,9 +238,8 @@ def play_game():
         if hit_ships(guess_board) == 5:
             print('____________________________________________________')
             print('____________________________________________________')
-            print(
-                f"Congratulations {name}, "
-                "you have sunk all of the battleships!")
+            print("Congratulations!")
+            print("you have sunk all of the battleships!")
             print('____________________________________________________')
             print('____________________________________________________')
             print("The game is now over.")
@@ -250,13 +249,12 @@ def play_game():
         print("You have " + str(turns) + " chances left!")
         print('_____________________________________________')
         print('_____________________________________________')
-        print(f"|| {name}'s SCORE: {PLAYER_SCORE} || "
+        print(f"|| YOURS SCORE: {PLAYER_SCORE} || "
               f" COMPUTER'S SCORE: {COMPUTER_SCORE} || ")
         print('_____________________________________________')
         print('_____________________________________________')
         if turns == 0:
-            print(
-                f"You ran out of turns {name}, the game is over.")
+            print("You ran out of turns, the game is over.")
             print('                ___________________________')
             print('               |       GAME OVER!          |')
             print('               | Thank you for plaing      |')
