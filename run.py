@@ -1,22 +1,10 @@
 from random import randint
-from itertools import zip_longest
 
-# creates a list of 8 spaces, 8 times
+
 hidden_board = [["_"] * 7 for x in range(7)]
 guess_board = [["_"] * 7 for x in range(7)]
 player_board = [["_"] * 7 for x in range(7)]
 
-# converts letters to numbers and numbers to letters
-letters_to_numbers = {
-    'A': 0,
-    'B': 1,
-    'C': 2,
-    'D': 3,
-    'E': 4,
-    'F': 5,
-    'G': 6
-    }
-    
 numbers_to_letters = {
     0: 'A',
     1: 'B',
@@ -26,19 +14,24 @@ numbers_to_letters = {
     5: 'F',
     6: 'G'
     }
+
+letters_to_numbers = {
+    'A': 0,
+    'B': 1,
+    'C': 2,
+    'D': 3,
+    'E': 4,
+    'F': 5,
+    'G': 6
+    }
+
 player_score = 0
 computer_score = 0
 
-continue_playing_options = ["ok", "end game"]
 
-  # https://www.programiz.com/python-programming/methods/string/title  
-  # https://www.programiz.com/python-programming/methods/string/upper
-    
-def start_game(): 
+def start_game():
     create_ships(hidden_board)
     create_ships(player_board)
-    print('_________________________________________')
-    print('_________________________________________')
     text='    Hello and Welcome to Battleshipgame!'
     print(text.title())
     print('_________________________________________')
@@ -60,35 +53,21 @@ def start_game():
     print('___________________________________________')
     message = '           BATTLESHIP GAME                '
     print(message.upper())
-    print('___________________________________________')
-    print('___________________________________________')
-
     print('      ______________________________________________________')
     print('     |           WELCOME TO MY GAME CALLED BATTLESHIP!      |')
     print('     |                                                      |')
     print('     |  You have 5 ships that are already placed on your    |')
     print('     |  game board. Now you have to guess where the ships   |')
     print('     |are placed on the computer game board. To do this, you|')
-    print ('    |have to decide the ships column and row ( marked with |')
+    print('     |have to decide the ships column and row ( marked with |')
     print('     | letters A-H and numbers 1-7).                         |')
     print("     | You have 10 turns to find all of the ships.          |")
     print('      ______________________________________________________')
-    number = ['   ', '  1', '  2', '  3', ' 4',  ' 5']
-    boats = ['', 'Carrier', 'Battleship', 'Destroyer', 'Submarine', 'Cruiser']
-    scale = ['         SIZE', '   |1|', '|1|', ' |1|', '  |1|', '    |1|']
-
-    for number, boats, scale, in zip_longest(number, boats, scale):
-        print('______________________________')
-        print(number, boats, scale)
-        print('______________________________')
-        
-    print("____________________________________")
     global name
     name = input("Please, enter your name:\n")
     while name == "" or name == " ":
         print("Error! Please, enter your name:")
-        username = input("Please enter your name:\n")
-        input('Press Enter to continue')
+        name = input("Please enter your name:\n")
 
 def create_ships(board):
     for ship in range(5):
@@ -96,14 +75,13 @@ def create_ships(board):
         while board[ship_row][ship_column] == "*":
             ship_row, ship_column = randint(0, 6), randint(0, 6)
         board[ship_row][ship_column] = "*"
-        
+
 def print_board(board):
     print("  A|B |C |D |E |F |G")
     row_number = 1
     for row in board:
         print(row_number, "|_".join(row))
-        row_number += 1        
-
+        row_number += 1 
 
 def computer_guess(board):
     global computer_score
@@ -125,12 +103,14 @@ def computer_guess(board):
         print(
             f"The computer guessed row {computer_row +1}"
             f" and column {numbers_to_letters[computer_column]}")
-        player_board[computer_row][computer_column] = "-"
-        print(f"The computer missed! {name}, You still have a chance to win!!")
-def get_ship_location():
-    print('____________________________________________________________')
+        print(f" {name}, the computer missed!")
+        player_board[computer_row][computer_column] = "-"    
+
+
+       
+
+def ship_location():
     print("   GUESS LOCATIONS OF THE SHIPS ON THE COMPUTER'S GAME BOARD")
-    print('____________________________________________________________')
     row = input('Please, choose the row 1-7 of the ship: \n')
     while row not in "1234567" or len(row) > 1 or row == "":
         validate_row(row)
@@ -143,55 +123,60 @@ def get_ship_location():
         column = input('Please, choose a letter between A-G \n').upper()
     return int(row) - 1, letters_to_numbers[column]
 
+
+
 def validate_row(values):
+
     try:
         [int(value) for value in values]
         if int(values) < 1 or int(values) > 7:
             print(
-                f"Number between 1-7 required, you provided '{values}'."
-           )
+                f" '{values}' is wrong! You should choose 1, 2, 3, 4, 5, 6 or 7"
+        )
     except:
-        print(f"Sorry number between 1-7 required, please try again.\n")
+        print(f"Please, try again! You should choose 1, 2, 3, 4, 5, 6 or 7.\n")
         return False
 
     return True
-
 
 def validate_column(values):
     try:
         if values not in letters_to_numbers:
             print(
-                f"Letter between A-G required, you provided '{values}'."
+                f"{values}' is wrong! You should choose A, B, C, D, E, F or G"
                 )
     except:
-        print(f"Sorry letter between A-G required, please try again.\n")
+        print(f"Please try again! You should choose A, B, C, D, E, F or G \n")
         return False
 
     return True
 
 
-def count_hit_ships(board):
+def hit_ships(board):
     count = 0
     for row in board:
         for column in row:
             if column == "x":
                 count += 1
     return count
-def validate_continue_playing(values):
+
+def validate_continue_game(values):
     try:
-        if values not in continue_playing_options:
+        if values not in continue_game_options:
             print(
-                f"Please press 'ok' or 'end game', you provided '{values}'."
+                f" '{values}' is wrong! Please press 'ok' or 'end game'."
                 )
     except:
-        print(f"Sorry 'ok'/'end game' required, please try again.\n")
+        print(f" Try again. Please press 'ok' or 'end game'.\n")
         return False
 
-    return True
+    return True    
+    
+
 
 def play_game():
     turns = 10
-    global user_score
+    global player_score
 
     while turns > 0:
         print('_____________________')
@@ -208,7 +193,7 @@ def play_game():
         print('_____________________')
         print('_____________________')
         print_board(guess_board)
-        row, column = get_ship_location()
+        row, column = ship_location()
         if guess_board[row][column] == "-" or guess_board[row][column] == "x":
             print('_____________________________________________')
             print('_____________________________________________')
@@ -218,7 +203,7 @@ def play_game():
         elif hidden_board[row][column] == "*":
             print('____________________________________________________')
             print('____________________________________________________')
-            print(f" You hit a  battleship!")
+            print(f" You hit a ship!")
             print('____________________________________________________')
             print('____________________________________________________')
             guess_board[row][column] = "x"
@@ -234,11 +219,11 @@ def play_game():
             guess_board[row][column] = "-"
             turns -= 1
             computer_guess(player_board)
-        if count_hit_ships(guess_board) == 5:
+        if hit_ships(guess_board) == 5:
             print('____________________________________________________')
             print('____________________________________________________')
             print(
-                f"Congratulations {username}, "
+                f"Congratulations {name}, "
                 "you have sunk all of the battleships!")
             print('____________________________________________________')
             print('____________________________________________________')
@@ -249,56 +234,54 @@ def play_game():
             print("You have " + str(turns) + " chances left!")
             print('_____________________________________________')
             print('_____________________________________________')
-            print(f"||  {username}'s SCORE: {player_score}   || "
-                     f" COMPUTER'S SCORE: {computer_score}  ||")
+            print(f"||  {name}'s SCORE: {player_score}   || "
+                    f" COMPUTER'S SCORE: {computer_score}  ||")
             print('_____________________________________________')
             print('_____________________________________________')
-            if turns == 0:
-                print(
-                    f"You ran out of turns {username}, the game is over.")
-                print('                ___________________________')
-                print('               |       GAME OVER!          |')
-                print('               | Thank you for plaing      |')
-                print('                ___________________________\n') 
-                print('Press enter to restart')
+        if turns == 0:
+            print(
+                f"You ran out of turns {name}, the game is over.")
+            print('                ___________________________')
+            print('               |       GAME OVER!          |')
+            print('               | Thank you for plaing      |')
+            print('                ___________________________\n') 
+         
                 
-                break
-            if count_hit_ships(player_board) == 5:
-                print(
-                    f"The computer"
-                    " has sunk all of your battleships!")
-                print('                ___________________________')
-                print('               |       GAME OVER!          |')
-                print('               | Thank you for plaing      |')
-                print('                ___________________________\n')  
-                print('Press enter to restart')
+            break
+        if hit_ships(player_board) == 5:
+            print(
+                f"The computer won!")
+            print('                ___________________________')
+            print('               |       GAME OVER!          |')
+            print('               | Thank you for plaing      |')
+            print('                ___________________________\n')  
+            print('Press enter to restart')
                 
+            break
+        if hit_ships(guess_board) < 5:
+            continue_game = input(
+                    "To continue press 'ok' otherwise press 'end game'. \n").lower()
+            while continue_game not in continue_game:
+                validate_continue_game(continue_game)
+                continue_game = input(
+                    "To continue press 'ok' otherwise press 'end game'. \n").lower()
+                    
+            if continue_game == "ok" or continue_game == "ok":
+                print(
+                    "You have decided to continue playing the game.")
+                continue
+            elif continue_game == "end game" or continue_game == "end game":
+                print(
+                    "You have decided to finish the game,"
+                    "the game is now over.")
                 break
-            if count_hit_ships(guess_board) < 5:
-                continue_playing = input(
-                        "To continue press 'ok' otherwise press 'end game'. \n").lower()
-                while continue_playing not in continue_playing_options:
-                    validate_continue_playing(continue_playing)
-                    continue_playing = input(
-                        "To continue press 'ok' otherwise press 'end game'. \n").lower()
-                       
-                if continue_playing == "ok" or continue_playing == "ok":
-                    print(
-                        "You have decided to continue playing the game.")
-                    continue
-                elif continue_playing == "end game" or continue_playing == "end game":
-                    print(
-                        "You have decided to finish the game,"
-                        "the game is now over.")
-                    break
-                else:
-                    print("Please enter 'yes' or 'no'")
-                    continue_playing = input(
-                        "Do you want to continue playing? y/n \n")
-                        
-def main():
+            else:
+                print("Please enter 'yes' or 'no'")
+                continue_game = input(
+                    "Do you want to continue playing? y/n \n")
+def main_menu():
     start_game()
     play_game()
-    
-    
-main()
+
+
+main_menu()
