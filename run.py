@@ -25,8 +25,10 @@ letters_to_numbers = {
     'G': 6
     }
 
-player_score = 0
-computer_score = 0
+PLAYER_SCORE = 0
+COMPUTER_SCORE = 0
+
+continue_game_options = 'ok', 'end game'
 
 
 def start_game():
@@ -76,7 +78,7 @@ def print_board(board):
     for row in board:
         print(row_number, "|_".join(row))
         row_number += 1
-        
+
 
 def create_ships(board):
     for ship in range(5):
@@ -98,7 +100,7 @@ def computer_guess(board):
         print(
             f"The computer guessed row {computer_row +1}"
             f" and column {numbers_to_letters[computer_column]}")
-        print("Your battleship has been hit!")    
+        print("Your battleship has been hit!")
         player_board[computer_row][computer_column] = "x"
         computer_score += 1
     else:
@@ -106,7 +108,7 @@ def computer_guess(board):
         print(
             f"The computer guessed row {computer_row +1}"
             f" and column {numbers_to_letters[computer_column]}")
-        print(f" {name}, the computer missed!")
+        print(f" The computer missed! {name}, You still have a chance to win!")
         player_board[computer_row][computer_column] = "-"
 
 
@@ -125,15 +127,15 @@ def ship_location():
     return int(row) - 1, letters_to_numbers[column]
 
 
-def validate_row(values):
+def validate_row(type):
 
     try:
-        [int(value) for value in values]
-        if int(values) < 1 or int(values) > 7:
+        [int(type) for type in type]
+        if int(type) < 1 or int(type) > 7:
             print(
-                f"'{values}' is wrong!"
+                f"'{type}' is wrong!"
             )
-    except ValueError:
+    except TypeError:
         print("Please, try again!")
         print("You should choose 1, 2, 3, 4, 5, 6 or 7.\n")
         return False
@@ -207,7 +209,7 @@ def play_game():
         elif hidden_board[row][column] == "*":
             print('____________________________________________________')
             print('____________________________________________________')
-            print(f" You hit a ship!")
+            print(" You hit a ship!")
             print('____________________________________________________')
             print('____________________________________________________')
             guess_board[row][column] = "x"
@@ -217,7 +219,7 @@ def play_game():
         else:
             print('____________________________________________________')
             print('____________________________________________________')
-            print(f"You missed!")
+            print("You missed!")
             print('____________________________________________________')
             print('____________________________________________________')
             guess_board[row][column] = "-"
@@ -252,7 +254,7 @@ def play_game():
             break
         if hit_ships(player_board) == 5:
             print(
-                f"The computer won!")
+                "The computer won!")
             print('                ___________________________')
             print('               |       GAME OVER!          |')
             print('               | Thank you for plaing      |')
