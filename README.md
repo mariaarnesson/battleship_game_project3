@@ -110,13 +110,12 @@ Testing information can be found in separate [testing.md](TESTING.md) file
     - The app should appear in a new tab on the web browser
     - The live link can be found here - https://battleship-game.herokuapp.com/
 # Credits
-- background-image [Pexel](https://www.pexels.com/sv-se/foto/'hav-himmel-vatten-moln-445363/)
+- background-image [Pexel- ships at the sea](https://images.pexels.com/photos/445363/pexels-photo-445363.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1)
 
-- I was inspired by this video to create the table of the ships: https://www.youtube.com/watch?v=OkB7JqlkTBU&t=1057s
+- [Python Value Error](https://www.digitalocean.com/community/tutorials/python-valueerror-exception-handling-examples) - this page was used to write python code to value error.
 
-- I used template for Python [Project 3 Teplate](https://github.com/Code-Institute-Org/python-essentials-template)
-
-- I used this website to write my first code in Python https://www.programiz.com/python-programming/online-compiler/
+- [Project 3 Teplate](https://github.com/Code-Institute-Org/python-essentials-template)- this template for Python was used.
+- [PEP8](https://pep8ci.herokuapp.com/#) - this page was used for checking my code for PEP8 requirements
 
 
 

@@ -136,7 +136,6 @@ def validate_row(type):
     """Function validating row."""
 
     try:
-        [int(type) for type in type]
         if int(type) < 1 or int(type) > 7:
             print(
                 f"'{type}' is wrong!"
@@ -211,34 +210,26 @@ def play_game():
         row, column = ship_location()
         if guess_board[row][column] == "-" or guess_board[row][column] == "x":
             print('_____________________________________________')
-            print('_____________________________________________')
             print("Incorrect! You have already guessed that place!")
-            print('_____________________________________________')
             print('_____________________________________________')
         elif hidden_board[row][column] == "*":
             print('____________________________________________________')
-            print('____________________________________________________')
             print(" You hit a ship!")
-            print('____________________________________________________')
             print('____________________________________________________')
             guess_board[row][column] = "x"
             turns -= 1
             computer_guess(player_board)
         else:
             print('____________________________________________________')
-            print('____________________________________________________')
             print("You missed!")
-            print('____________________________________________________')
             print('____________________________________________________')
             guess_board[row][column] = "-"
             turns -= 1
             computer_guess(player_board)
         if hit_ships(guess_board) == 5:
             print('____________________________________________________')
-            print('____________________________________________________')
             print("Congratulations!")
             print("you have sunk all of the battleships!")
-            print('____________________________________________________')
             print('____________________________________________________')
             print('                ___________________________')
             print('               |       GAME OVER!          |')
@@ -248,8 +239,6 @@ def play_game():
         print('_____________________________________________')
         print('_____________________________________________')
         print("You have " + str(turns) + " chances left!")
-        print('_____________________________________________')
-        print('_____________________________________________')
         print('_____________________________________________')
         print('_____________________________________________')
         if turns == 0:
