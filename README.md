@@ -80,12 +80,6 @@ The diagram below shows the structure of the functions presented in the run.py f
 
 ![flowcharts](assets/image/flow_charts.png)
 
-# Data Model
-The model class Board has been used. 
-The class Board includes:
-    - board, 
-    - number of ships, 
-    - guessing enemy ships
 # Testing
 
 Testing information can be found in separate [testing.md](TESTING.md) file
