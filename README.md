@@ -110,7 +110,7 @@ Testing information can be found in separate [testing.md](TESTING.md) file
     - The app should appear in a new tab on the web browser
     - The live link can be found here - https://battleship-game.herokuapp.com/
 # Credits
-- background-image [Pexel- ships at the sea](https://images.pexels.com/photos/445363/pexels-photo-445363.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1)
+- [Pexel- ships at the sea](https://images.pexels.com/photos/445363/pexels-photo-445363.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1) - A image from this page was used to the background. 
 
 - [Python Value Error](https://www.digitalocean.com/community/tutorials/python-valueerror-exception-handling-examples) - this page was used to write python code to value error.
 
