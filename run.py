@@ -1,5 +1,6 @@
 from random import randint
 
+# legend:
 
 hidden_board = [["_"] * 7 for x in range(7)]
 guess_board = [["_"] * 7 for x in range(7)]
@@ -84,7 +85,6 @@ def print_board(board):
 
 def create_random_ships(board):
     """Function creating ships."""
-    ship = []
     for ship in range(5):
         ship_row, ship_column = randint(0, 6), randint(0, 6)
         while board[ship_row][ship_column] == "*":
@@ -92,7 +92,7 @@ def create_random_ships(board):
         board[ship_row][ship_column] = "*"
 
 
-def computer_guess(board):
+def computer_guess():
 
     """Function guessing computer play board."""
     computer_row, computer_column = randint(0, 6), randint(0, 6)
@@ -132,13 +132,13 @@ def ship_location():
     return int(row) - 1, letters_to_numbers[column]
 
 
-def validate_row(type):
+def validate_row(place_number):
     """Function validating row."""
 
     try:
-        if int(type) < 1 or int(type) > 7:
+        if int(place_number) < 1 or int(place_number) > 7:
             print(
-                f"'{type}' is wrong!"
+                f"'{place_number}' is wrong!"
             )
     except TypeError:
         print("Please, try again!")
@@ -218,14 +218,14 @@ def play_game():
             print('____________________________________________________')
             guess_board[row][column] = "x"
             turns -= 1
-            computer_guess(player_board)
+            computer_guess()
         else:
             print('____________________________________________________')
             print("You missed!")
             print('____________________________________________________')
             guess_board[row][column] = "-"
             turns -= 1
-            computer_guess(player_board)
+            computer_guess()
         if hit_ships(guess_board) == 5:
             print('____________________________________________________')
             print("Congratulations!")
