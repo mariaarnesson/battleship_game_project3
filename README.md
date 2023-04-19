@@ -79,7 +79,7 @@ Guessed ships are marked with an 'X'.The game ends when all the ships have been 
 
 The diagram below shows the structure of the functions presented in the run.py file:
 
-![flowcharts](assets/image/flowcharts.png)
+![flowcharts](assets/image/flow_charts.png)
 
 # Data Model
 The model class Board has been used. 
