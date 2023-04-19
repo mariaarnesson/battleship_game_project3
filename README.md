@@ -36,7 +36,6 @@ After pressing on run the game, entering the user's name, the user can see the g
 
 - Introductory text and drawing after starting the game:
 ![features_01](assets/image/features_01.png)
-![features_02](assets/image/features_02.png)
 
 - Start text where the user is asked to enter user's name.
 ![features_03](assets/image/features_03.png)
@@ -44,10 +43,10 @@ After pressing on run the game, entering the user's name, the user can see the g
 - Further text where the user has to press enter to continue the game.
 ![features_04](assets/image/features_04.png)
 
-- Introduction, game instructions and ships size table.
+- Introduction with game instructions.
 ![features_05](assets/image/features_05.png)
 
-- The user has to enter the column number and the letter of row to place user's ships on the board.
+- the user game board and the computer game board are displayed.
 ![features_08](assets/image/features_08.png)
 
 - The user has is to guess where the ships are located on the computer board.
