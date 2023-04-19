@@ -76,9 +76,3 @@ No error founds on PEP8online.com
 - After 5 chances to guess the ships on the board, the game ends and the message: 'GAME OVER! Thank you for plaing ' is shown.
 
 
-# Bugs
-### Solved Bugs
-
-### Remaining Bugs
-
-- No bugs remaining. 
