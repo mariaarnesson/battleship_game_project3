@@ -7,9 +7,9 @@ import os
 from colorama import Fore
 
 
-hidden_board = [["_"] * 10 for x in range(10)]
-guess_board = [["_"] * 10 for x in range(10)]
-player_board = [["_"] * 10 for x in range(10)]
+hidden_board = [["_"] * 9 for x in range(9)]
+guess_board = [["_"] * 9 for x in range(9)]
+player_board = [["_"] * 9 for x in range(9)]
 
 
 numbers_to_letters = {
@@ -21,8 +21,7 @@ numbers_to_letters = {
     5: 'F',
     6: 'G',
     7: 'H',
-    8: 'I',
-    9: 'J'
+    8: 'I'
     }
 
 letters_to_numbers = {
@@ -34,8 +33,7 @@ letters_to_numbers = {
     'F': 5,
     'G': 6,
     'H': 7,
-    'I': 8,
-    'J': 9
+    'I': 8
     }
 
 PLAYER_SCORE = 0
@@ -142,9 +140,9 @@ def create_random_ships(board):
     """Function creating ships."""
     # https://github.com/gbrough/battleship/blob/main/single_player.py
     for ship in range(10):
-        ship_row, ship_column = randint(0, 9), randint(0, 9)
+        ship_row, ship_column = randint(0, 8), randint(0, 8)
         while board[ship_row][ship_column] == "✩":
-            ship_row, ship_column = randint(0, 9), randint(0, 9)
+            ship_row, ship_column = randint(0, 8), randint(0, 8)
         board[ship_row][ship_column] = "✩"
 
 
@@ -152,7 +150,7 @@ def computer_guess():
 
     """Function guessing computer play board."""
     global COMPUTER_SCORE
-    computer_row, computer_column = randint(0, 9), randint(0, 9)
+    computer_row, computer_column = randint(0, 8), randint(0, 8)
     if (player_board[computer_row][computer_column] == "-" or
             player_board[computer_row][computer_column] == "★"):
         computer_row = randint(0, 9)
@@ -181,17 +179,17 @@ def ship_location():
         "\033[1;32m GUESS LOCATIONS OF THE SHIPS ON THE COMPUTER'S GAME BOARD"
         )
     row = input('Please, choose the row 1-10 of the ship: \n')
-    while row not in "12345678910" or len(row) > 1 or row == "":
+    while row not in "123456789" or len(row) > 1 or row == "":
         validate_row(row)
         print(Fore.RED + 'Incorrect!')
-        print(Fore.RED + 'You should choose 1, 2, 3, 4, 5, 6, 7, 8, 9 or 10')
+        print(Fore.RED + 'You should choose 1, 2, 3, 4, 5, 6, 7, 8 or 9')
         row = input('\033[1;32m Please, choose a number between 1-10\n')
-    column = input('Please, choose some letter between A-J: \n')
+    column = input('Please, choose some letter between A-I: \n')
     while column not in "ABCDEFGH" or len(column) > 1 or column == "":
         validate_column(column)
         print(Fore.RED + 'Incorrect!')
-        print(Fore.RED + 'You should choose A, B, C, D, E, F, G, H, I or J')
-        column = input('\033[1;32m Please, choose a letter between A-J \n')
+        print(Fore.RED + 'You should choose A, B, C, D, E, F, G, H or I')
+        column = input('\033[1;32m Please, choose a letter between A-I \n')
     return int(row) - 1, letters_to_numbers[column]
 
 
@@ -199,11 +197,11 @@ def validate_row(place_number):
     """Function validating row."""
 
     try:
-        if int(place_number) < 1 or int(place_number) > 10:
+        if int(place_number) < 1 or int(place_number) > 9:
             print(Fore.RED + f"{place_number} is wrong!")
     except TypeError:
         print("\033[1;32m Please, try again!")
-        print("You should choose 1, 2, 3, 4, 5, 6, 7, 8, 9 or 10.\n")
+        print("You should choose 1, 2, 3, 4, 5, 6, 7, 8 or 9.\n")
         return False
 
     return True
@@ -216,7 +214,7 @@ def validate_column(values):
             print(Fore.RED + f"'{values}' is wrong!")
     except ValueError:
         print("\033[1;32m Please try again!")
-        print("You should choose A, B, C, D, E, F, G, H, I or J \n")
+        print("You should choose A, B, C, D, E, F, G, H or I \n")
         return False
 
     return True
@@ -233,11 +231,11 @@ def hit_ships(board):
     return count
 
 
-def validate_continue_game(values):
+def validate_continue_game(stop_game):
     """Function contuating game."""
     try:
-        if values not in continue_game_options:
-            print(Fore.RED + f" '{values}' is wrong!")
+        if stop_game not in continue_game_options:
+            print(Fore.RED + f" '{stop_game}' is wrong!")
             print(Fore.RED + "Please press 'ok' or 'end game'.")
     except ValueError:
         print("\033[1;32m  Try again.")
