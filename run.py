@@ -32,6 +32,23 @@ COMPUTER_SCORE = 0
 continue_game_options = 'ok', 'end game'
 
 
+def start_menu():
+    """
+    Start the game menu.
+    """
+    print('Choose one of the options to continue:')
+    print('1. Play the game')
+    print('2. Read Instructions.')
+    start = input('Enter your ooption here:\n')
+
+    if start == '1':
+        start_game()
+    elif start == '2':
+        instructions()
+    else:
+        print(f'You entered: {start}. Please enter 1 or 2.\n')
+
+
 def start_game():
     """Function start game."""
     create_random_ships(hidden_board)
@@ -55,6 +72,17 @@ def start_game():
     print('                     ____________________     ')
     print('___________________________________________')
     print('___________________________________________')
+    name = input("Please, enter your name:\n")
+    print(f" Hello {name}!")
+    while name == "" or name == " ":
+        print("Error! Please, enter your name:")
+        name = input("Please enter your name:\n")
+
+
+def instructions():
+    """
+    Function to show the instructions.
+    """
     message = '           BATTLESHIP GAME                '
     print(message.upper())
     print('      ______________________________________________________')
@@ -67,11 +95,7 @@ def start_game():
     print('     | letters A-H and numbers 1-7).                        |')
     print("     | You have 10 turns to find all of the ships.          |")
     print('      ______________________________________________________')
-    name = input("Please, enter your name:\n")
-    print(f" Hello {name}!")
-    while name == "" or name == " ":
-        print("Error! Please, enter your name:")
-        name = input("Please enter your name:\n")
+    input('Press Enter to start the game!')
 
 
 def print_board(board):
@@ -235,6 +259,7 @@ def play_game():
             print('               |       GAME OVER!          |')
             print('               | Thank you for plaing      |')
             print('                ___________________________\n')
+            play_again()
             break
         print('_____________________________________________')
         print('_____________________________________________')
@@ -247,6 +272,7 @@ def play_game():
             print('               |       GAME OVER!          |')
             print('               | Thank you for plaing      |')
             print('                ___________________________\n')
+            play_again()
             break
         if hit_ships(player_board) == 5:
             print(
@@ -255,6 +281,7 @@ def play_game():
             print('               |       GAME OVER!          |')
             print('               | Thank you for plaing      |')
             print('                ___________________________\n')
+            play_again()
             break
         if hit_ships(guess_board) < 5:
             continue_game = input(
@@ -270,6 +297,7 @@ def play_game():
                 print('               |       GAME OVER!          |')
                 print('               | Thank you for plaing      |')
                 print('                ___________________________\n')
+                play_again()
                 break
             else:
                 print("Incorrect!!!")
@@ -277,10 +305,30 @@ def play_game():
                     "You should press 'ok' or 'end game'.\n")
 
 
+def play_again():
+    """
+    Function for playing again.
+    """
+    print('Choose one of the options:')
+    print('1. Play the Game Again.')
+    print('2. End Game')
+    answer = input('Enter your option here: ')
+
+    if answer == '1':
+        start_game()
+    elif answer == '2':
+        exit()
+    else:
+        print(f'You entered: {answer}. Please enter 1 or 2.')
+
+
 def main_menu():
     """Function main menu."""
+    start_menu()
+    instructions()
     start_game()
     play_game()
+    play_again()
 
 
 main_menu()
