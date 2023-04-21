@@ -119,6 +119,7 @@ def create_random_ships(board):
 def computer_guess():
 
     """Function guessing computer play board."""
+    global COMPUTER_SCORE
     computer_row, computer_column = randint(0, 6), randint(0, 6)
     if (player_board[computer_row][computer_column] == "-" or
             player_board[computer_row][computer_column] == "x"):
@@ -131,6 +132,7 @@ def computer_guess():
             f" and column {numbers_to_letters[computer_column]}")
         print("Your battleship has been hit!")
         player_board[computer_row][computer_column] = "x"
+        COMPUTER_SCORE += 1
     else:
         input('Press Enter to continue')
         print(
@@ -215,6 +217,7 @@ def validate_continue_game(values):
 def play_game():
     """Function playing game."""
     turns = 10
+    global PLAYER_SCORE
 
     while turns > 0:
         print('_____________________')
@@ -243,6 +246,7 @@ def play_game():
             guess_board[row][column] = "x"
             turns -= 1
             computer_guess()
+            PLAYER_SCORE += 1
         else:
             print('____________________________________________________')
             print("You missed!")
@@ -266,6 +270,9 @@ def play_game():
         print("You have " + str(turns) + " chances left!")
         print('_____________________________________________')
         print('_____________________________________________')
+        print(f" |Your's Score: {PLAYER_SCORE}|")
+        print(f" |Computer's Score: {COMPUTER_SCORE}|")
+
         if turns == 0:
             print("You ran out of turns, the game is over.")
             print('                ___________________________')
