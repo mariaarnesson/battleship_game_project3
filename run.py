@@ -93,7 +93,7 @@ def start_game():
     time.sleep(2)
     print('                   LOADING...')
     print('                  [■■■■■■■■■□] 90%')
-    time.sleep(1)    
+    time.sleep(1)
 
 
 def instructions():
@@ -263,7 +263,7 @@ def play_game():
             print('\033[1;32m_____________________________________________')
         elif hidden_board[row][column] == "✩":
             print('\033[1;32m__________________________________________')
-            print(" You hit a ship!")
+            print("Well done!! You hit a ship!")
             print('____________________________________________________')
             guess_board[row][column] = "★"
             turns -= 1
