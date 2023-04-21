@@ -1,6 +1,7 @@
 from random import randint
 import time
 from colorama import Fore
+import os
 
 # legend:
 
@@ -38,6 +39,13 @@ PLAYER_SCORE = 0
 COMPUTER_SCORE = 0
 
 continue_game_options = 'ok', 'end game'
+
+
+def clear():
+    """
+    Clear the terminal.
+    """
+    os.system("cls" if os.name == "nt" else "clear")
 
 
 def start_menu():
@@ -94,6 +102,7 @@ def start_game():
     print('                   LOADING...')
     print('                  [■■■■■■■■■□] 90%')
     time.sleep(1)
+    clear()
 
 
 def instructions():
