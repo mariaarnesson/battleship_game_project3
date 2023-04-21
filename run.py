@@ -54,13 +54,13 @@ def start_menu():
     elif start == '2':
         instructions()
     else:
-        print(f'You entered: {start}. Please enter 1 or 2.\n')
+        print(+ f'Inorrect!!! You entered: {start}. Please enter 1 or 2.\n')
 
 
 def start_game():
     """Function start game."""
     # https://www.textfacescopy.com/loading-symbol.html
-    print('                   LOADING...')
+    print('\033[1;32m                   LOADING...')
     print('                  [■■■■■□□□□□] 50%')
     time.sleep(2)
     print('                   LOADING...')
@@ -68,11 +68,11 @@ def start_game():
     time.sleep(1)
     create_random_ships(hidden_board)
     create_random_ships(player_board)
-    print('_________________________________________')
+    print('\033[1;32m_________________________________________')
     print('_________________________________________')
     text = '    Hello and Welcome to Battleshipgame!\n'
     print(text.title())
-    print('                         ____||__  _____||__  ')
+    print('                        ____||__  _____||__  ')
     print('                ____||_ )________( )_________(  ')
     print('               )_______( ____||__  _____||__   ')
     print('                ____||_ )________( )_________(  ')
@@ -89,8 +89,8 @@ def start_game():
     name = input("Please, enter your name:\n")
     print(f" Hello {name}!")
     while name == "" or name == " ":
-        print("Error! Please, enter your name:")
-        name = input("Please enter your name:\n")
+        print(Fore.RED + "Error! Please, enter your name:")
+        name = input("\033[1;32m Please enter your name:\n")
 
 
 def instructions():
@@ -99,10 +99,8 @@ def instructions():
     """
     message = '           BATTLESHIP GAME                '
     print(message.upper())
-    print('    ______________________________________________________ ')
-    print('  / \                                                      \.')
+    print('\033[1;32m_____________________________________________ ')
     print(' |   |                                                      |.')
-    print('  \_ |                                                      |.')
     print('     |           WELCOME TO MY GAME CALLED BATTLESHIP!      |')
     print('     |                                                      |')
     print('     |  You have 5 ships that are already placed on your    |')
@@ -113,8 +111,7 @@ def instructions():
     print("     | You have 10 turns to find all of the ships.          |")
     print('     |   ___________________________________________________|___')
     print('     |  /                                                      /.')
-    print('     \_/dc____________________________________________________/.')
-    input('press enter start a game.')
+    input('press any key to start a game.')
 
 
 def print_board(board):
@@ -131,9 +128,9 @@ def create_random_ships(board):
     # https://github.com/gbrough/battleship/blob/main/single_player.py
     for ship in range(10):
         ship_row, ship_column = randint(0, 9), randint(0, 9)
-        while board[ship_row][ship_column] == "✭":
+        while board[ship_row][ship_column] == "✩":
             ship_row, ship_column = randint(0, 9), randint(0, 9)
-        board[ship_row][ship_column] = "✭"
+        board[ship_row][ship_column] = "✩"
 
 
 def computer_guess():
@@ -145,8 +142,8 @@ def computer_guess():
             player_board[computer_row][computer_column] == "★"):
         computer_row = randint(0, 9)
         computer_column = randint(0, 9)
-    elif player_board[computer_row][computer_column] == "✭":
-        input('Press Enter to continue')
+    elif player_board[computer_row][computer_column] == "✩":
+        input('Press any key to continue')
         print(
             f"The computer guessed row {computer_row +1}"
             f" and column {numbers_to_letters[computer_column]}")
@@ -154,7 +151,7 @@ def computer_guess():
         player_board[computer_row][computer_column] = "★"
         COMPUTER_SCORE += 1
     else:
-        input('Press Enter to continue')
+        input('Press any key to continue')
         print(
             f"The computer guessed row {computer_row +1}"
             f" and column {numbers_to_letters[computer_column]}")
@@ -165,17 +162,21 @@ def computer_guess():
 def ship_location():
     """Function locating ship."""
     # https://github.com/gbrough/battleship/blob/main/single_player.py
-    print("   GUESS LOCATIONS OF THE SHIPS ON THE COMPUTER'S GAME BOARD")
+    print(
+        "\033[1;32m GUESS LOCATIONS OF THE SHIPS ON THE COMPUTER'S GAME BOARD"
+        )
     row = input('Please, choose the row 1-10 of the ship: \n')
     while row not in "12345678910" or len(row) > 1 or row == "":
         validate_row(row)
-        print('Incorrect! You should choose 1, 2, 3, 4, 5, 6, 7, 8, 9 or 10')
-        row = input('Please, choose a number between 1-10\n')
+        print(Fore.RED + 'Incorrect!')
+        print(Fore.RED + 'You should choose 1, 2, 3, 4, 5, 6, 7, 8, 9 or 10')
+        row = input('\033[1;32m Please, choose a number between 1-10\n')
     column = input('Please, choose some letter between A-J: \n')
     while column not in "ABCDEFGH" or len(column) > 1 or column == "":
         validate_column(column)
-        print('Incorrect! You should choose A, B, C, D, E, F, G, H, I or J')
-        column = input('Please, choose a letter between A-J \n')
+        print(Fore.RED + 'Incorrect!')
+        print(Fore.RED + 'You should choose A, B, C, D, E, F, G, H, I or J')
+        column = input('\033[1;32m Please, choose a letter between A-J \n')
     return int(row) - 1, letters_to_numbers[column]
 
 
@@ -184,11 +185,9 @@ def validate_row(place_number):
 
     try:
         if int(place_number) < 1 or int(place_number) > 10:
-            print(
-                f"'{place_number}' is wrong!"
-            )
+            print(Fore.RED + f"{place_number} is wrong!")
     except TypeError:
-        print("Please, try again!")
+        print("\033[1;32m Please, try again!")
         print("You should choose 1, 2, 3, 4, 5, 6, 7, 8, 9 or 10.\n")
         return False
 
@@ -199,11 +198,9 @@ def validate_column(values):
     """Function validating column."""
     try:
         if values not in letters_to_numbers:
-            print(
-                f"'{values}' is wrong!"
-                )
+            print(Fore.RED + f"'{values}' is wrong!")
     except ValueError:
-        print("Please try again!")
+        print("\033[1;32m Please try again!")
         print("You should choose A, B, C, D, E, F, G, H, I or J \n")
         return False
 
@@ -225,11 +222,10 @@ def validate_continue_game(values):
     """Function contuating game."""
     try:
         if values not in continue_game_options:
-            print(
-                f" '{values}' is wrong! Please press 'ok' or 'end game'."
-                )
+            print(Fore.RED + f" '{values}' is wrong!")
+            print(Fore.RED + "Please press 'ok' or 'end game'.")
     except ValueError:
-        print(" Try again.")
+        print("\033[1;32m  Try again.")
         print(" Please press 'ok' or 'end game'.\n")
         return False
 
@@ -242,7 +238,7 @@ def play_game():
     global PLAYER_SCORE
 
     while turns > 0:
-        print('_____________________')
+        print('\033[1;32m_____________________')
         print('_____________________')
         print("    Your Board")
         print('_____________________')
@@ -259,10 +255,11 @@ def play_game():
         row, column = ship_location()
         if guess_board[row][column] == "-" or guess_board[row][column] == "★":
             print('_____________________________________________')
-            print("Incorrect! You have already guessed that place!")
+            print(Fore.RED + "Incorrect!")
+            print(Fore.RED + "You have already guessed that place!")
             print('_____________________________________________')
-        elif hidden_board[row][column] == "✭":
-            print('____________________________________________________')
+        elif hidden_board[row][column] == "✩":
+            print('\033[1;32m__________________________________________')
             print(" You hit a ship!")
             print('____________________________________________________')
             guess_board[row][column] = "★"
@@ -329,9 +326,9 @@ def play_game():
                 play_again()
                 break
             else:
-                print("Incorrect!!!")
+                print(Fore.RED + "Incorrect!!!")
                 continue_game = input(
-                    "You should press 'ok' or 'end game'.\n")
+                    "\033[1;32m You should press 'ok' or 'end game'.\n")
 
 
 def play_again():
@@ -348,12 +345,13 @@ def play_again():
     elif answer == '2':
         exit()
     else:
-        print(f'You entered: {answer}. Please enter 1 or 2.')
+        print(Fore.RED + 'Incorrect!!!')
+        print(Fore.RED + f'You entered: {answer}. Please enter 1 or 2.')
 
 
 def main_menu():
     """Function main menu."""
-    start_menu()  
+    start_menu()
     start_game()
     play_game()
     play_again()
