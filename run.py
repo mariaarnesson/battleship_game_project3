@@ -44,30 +44,6 @@ def start_menu():
     """
     Start the game menu.
     """
-    print('Choose one of the options to continue:')
-    print('1. Play the game')
-    print('2. Read Instructions.')
-    start = input('Enter your ooption here:\n')
-
-    if start == '1':
-        start_game()
-    elif start == '2':
-        instructions()
-    else:
-        print(+ f'Inorrect!!! You entered: {start}. Please enter 1 or 2.\n')
-
-
-def start_game():
-    """Function start game."""
-    # https://www.textfacescopy.com/loading-symbol.html
-    print('\033[1;32m                   LOADING...')
-    print('                  [■■■■■□□□□□] 50%')
-    time.sleep(2)
-    print('                   LOADING...')
-    print('                  [■■■■■■■■■□] 90%')
-    time.sleep(1)
-    create_random_ships(hidden_board)
-    create_random_ships(player_board)
     print('\033[1;32m_________________________________________')
     print('_________________________________________')
     text = '    Hello and Welcome to Battleshipgame!\n'
@@ -86,11 +62,38 @@ def start_game():
     print('                     ____________________     ')
     print('___________________________________________')
     print('___________________________________________')
+    print(' At the begging, choose one of the options:')
+    print('1. Play the game')
+    print('2. Read Instructions.')
+    start = input('Enter your ooption here:\n')
+
+    if start == '1':
+        start_game()
+    elif start == '2':
+        instructions()
+    else:
+        print(+ f'Inorrect!!! You entered: {start}. Please enter 1 or 2.\n')
+
+
+def start_game():
+    """Function start game."""
+    # https://www.textfacescopy.com/loading-symbol.html
+    create_random_ships(hidden_board)
+    create_random_ships(player_board)
+    print('\033[1;32m_________________________________________')
+    message = '           battleship game                '
+    print(message.upper())
     name = input("Please, enter your name:\n")
-    print(f" Hello {name}!")
+    print(f" Hello and welcome in my game, {name}!")
     while name == "" or name == " ":
         print(Fore.RED + "Error! Please, enter your name:")
         name = input("\033[1;32m Please enter your name:\n")
+    print('\033[1;32m                   LOADING...')
+    print('                  [■■■■■□□□□□] 50%')
+    time.sleep(2)
+    print('                   LOADING...')
+    print('                  [■■■■■■■■■□] 90%')
+    time.sleep(1)    
 
 
 def instructions():
@@ -110,7 +113,7 @@ def instructions():
     print('     | letters A-H and numbers 1-7).                        |')
     print("     | You have 10 turns to find all of the ships.          |")
     print('     |   ___________________________________________________|___')
-    print('     |  /                                                      /.')
+    print('     | /                                                      /.')
     input('press any key to start a game.')
 
 
@@ -257,7 +260,7 @@ def play_game():
             print('_____________________________________________')
             print(Fore.RED + "Incorrect!")
             print(Fore.RED + "You have already guessed that place!")
-            print('_____________________________________________')
+            print('\033[1;32m_____________________________________________')
         elif hidden_board[row][column] == "✩":
             print('\033[1;32m__________________________________________')
             print(" You hit a ship!")
@@ -285,11 +288,10 @@ def play_game():
             play_again()
             break
         print('_____________________________________________')
-        print('_____________________________________________')
         print("You have " + str(turns) + " chances left!")
         print('_____________________________________________')
         print('_____________________________________________')
-        print(f" |Your's Score: {PLAYER_SCORE}|")
+        print(f" |Your's Score: {PLAYER_SCORE}    |")
         print(f" |Computer's Score: {COMPUTER_SCORE}|")
 
         if turns == 0:
