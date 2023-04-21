@@ -1,13 +1,16 @@
+"""
+Modules:
+"""
 from random import randint
 import time
-from colorama import Fore
 import os
+from colorama import Fore
 
-# legend:
 
 hidden_board = [["_"] * 10 for x in range(10)]
 guess_board = [["_"] * 10 for x in range(10)]
 player_board = [["_"] * 10 for x in range(10)]
+
 
 numbers_to_letters = {
     0: 'A',
@@ -92,7 +95,7 @@ def start_game():
     message = '           battleship game                '
     print(message.upper())
     name = input("Please, enter your name:\n")
-    print(f" Hello and welcome in my game, {name}!")
+    print(f" Hello and welcome to my game, {name}!")
     while name == "" or name == " ":
         print(Fore.RED + "Error! Please, enter your name:")
         name = input("\033[1;32m Please enter your name:\n")
@@ -101,7 +104,7 @@ def start_game():
     time.sleep(2)
     print('                   LOADING...')
     print('                  [■■■■■■■■■□] 90%')
-    time.sleep(1)
+    time.sleep(2)
     clear()
 
 
