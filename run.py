@@ -1,5 +1,6 @@
 from random import randint
 import time
+from colorama import Fore
 
 # legend:
 
@@ -127,6 +128,7 @@ def print_board(board):
 
 def create_random_ships(board):
     """Function creating ships."""
+    # https://github.com/gbrough/battleship/blob/main/single_player.py
     for ship in range(10):
         ship_row, ship_column = randint(0, 9), randint(0, 9)
         while board[ship_row][ship_column] == "✭":
@@ -162,6 +164,7 @@ def computer_guess():
 
 def ship_location():
     """Function locating ship."""
+    # https://github.com/gbrough/battleship/blob/main/single_player.py
     print("   GUESS LOCATIONS OF THE SHIPS ON THE COMPUTER'S GAME BOARD")
     row = input('Please, choose the row 1-10 of the ship: \n')
     while row not in "12345678910" or len(row) > 1 or row == "":
@@ -209,6 +212,7 @@ def validate_column(values):
 
 def hit_ships(board):
     """Function hitting ships."""
+    # https://github.com/gbrough/battleship/blob/main/single_player.py
     count = 0
     for row in board:
         for column in row:
