@@ -124,12 +124,12 @@ def instructions():
     print("     | You have 10 turns to find all of the ships.          |")
     print('     |   ___________________________________________________|___')
     print('     | /                                                      /.')
-    input('press any key to start a game.')
+    input('press enter to start a game.')
 
 
 def print_board(board):
     """Function printing board."""
-    print("  A|B |C |D |E |F |G |I |J | K ")
+    print("  A|B |C |D |E |F |G |I |J ")
     row_number = 1
     for row in board:
         print(row_number, "|_".join(row))
@@ -156,7 +156,7 @@ def computer_guess():
         computer_row = randint(0, 9)
         computer_column = randint(0, 9)
     elif player_board[computer_row][computer_column] == "✩":
-        input('Press any key to continue')
+        input('Press enter to continue')
         print(
             f"The computer guessed row {computer_row +1}"
             f" and column {numbers_to_letters[computer_column]}")
@@ -164,7 +164,7 @@ def computer_guess():
         player_board[computer_row][computer_column] = "★"
         COMPUTER_SCORE += 1
     else:
-        input('Press any key to continue')
+        input('Press enter to continue')
         print(
             f"The computer guessed row {computer_row +1}"
             f" and column {numbers_to_letters[computer_column]}")
@@ -183,9 +183,9 @@ def ship_location():
         validate_row(row)
         print(Fore.RED + 'Incorrect!')
         print(Fore.RED + 'You should choose 1, 2, 3, 4, 5, 6, 7, 8 or 9')
-        row = input('\033[1;32m Please, choose a number between 1-10\n')
+        row = input('\033[1;32m Please, choose a number between 1-9\n')
     column = input('Please, choose some letter between A-I: \n')
-    while column not in "ABCDEFGH" or len(column) > 1 or column == "":
+    while column not in "ABCDEFGHI" or len(column) > 1 or column == "":
         validate_column(column)
         print(Fore.RED + 'Incorrect!')
         print(Fore.RED + 'You should choose A, B, C, D, E, F, G, H or I')
