@@ -1,4 +1,5 @@
 from random import randint
+import time
 
 # legend:
 
@@ -57,13 +58,19 @@ def start_menu():
 
 def start_game():
     """Function start game."""
+    # https://www.textfacescopy.com/loading-symbol.html
+    print('                   LOADING...')
+    print('                  [■■■■■□□□□□] 50%')
+    time.sleep(2)
+    print('                   LOADING...')
+    print('                  [■■■■■■■■■□] 90%')
+    time.sleep(1)
     create_random_ships(hidden_board)
     create_random_ships(player_board)
-    text = '    Hello and Welcome to Battleshipgame!'
+    print('_________________________________________')
+    print('_________________________________________')
+    text = '    Hello and Welcome to Battleshipgame!\n'
     print(text.title())
-    print('_________________________________________')
-    print('_________________________________________')
-    print('                                       \n')
     print('                         ____||__  _____||__  ')
     print('                ____||_ )________( )_________(  ')
     print('               )_______( ____||__  _____||__   ')
@@ -106,8 +113,7 @@ def instructions():
     print('     |   ___________________________________________________|___')
     print('     |  /                                                      /.')
     print('     \_/dc____________________________________________________/.')
-    print('[■■■■■□□□□□] 50%')
-    print('  LOADING ...')
+    input('press enter start a game.')
 
 
 def print_board(board):
