@@ -207,7 +207,7 @@ def validate_row(place_number):
     try:
         if int(place_number) < 1 or int(place_number) > 9:
             print(Fore.RED + f"{place_number} is wrong!")
-    except TypeError:
+    except ValueError:
         print("\033[1;32m Please, try again!")
         print("You should choose 1, 2, 3, 4, 5, 6, 7, 8 or 9.\n")
         return False
