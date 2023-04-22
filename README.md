@@ -3,6 +3,21 @@
 ![responsive](assets/image/responsive.png)
 ![game](assets/image/game.png)
 
+# Table of content
+
+- [Introduction](#introduction)
+- [User Experience (UX)](#user-experience-ux)
+    - [User Stories](#user-stories)
+- [How to play](#how-to-play)
+- [Features](#features)
+    - [Existing Features](#existing-features)
+    - [Future Features](#future-features)
+ - [Designe](#designe)
+ - [Testing](#testing)
+ - [Deployment](#deployment)
+ - [Credits](#Credits)
+
+
 # Introduction
 [View the live project here](https://battleship-game.herokuapp.com/)
 
