@@ -60,14 +60,14 @@ No error founds on PEP8online.com
 - The following information is displayed: 'GUESS LOCATIONS OF THE SHIPS ON THE COMPUTER'S GAME BOARD'.
 - The computer board is shown, the user is supposed to guess where the computer ships are located.
      - The following message is displayed:'Please, choose the row 1-9 of the ship:
-        - When the user selects a letter between A-G, the following message is displayed: 'Please, choose the row 1-7 of the ship: '
-             - when the user select a number except 1-7, the following message is displayed: 'Incorrect! You should choose 1, 2, 3, 4, 5, 6 or 7'.
-            - when the user select a number between 1-7, the board game is shown with a ship is marked of the user.
-        - When the user selects a letter except A-G, the following message is displayed: 'Incorrect! You should choose A, B, C, D, E, F or G'.
-     - When the user enters a letter and number where the ship exists on the computer board, the message: 'HIT!' is displayed, and this place is marked with : 'x'.
-     - When the user enters a letter and number where the ship not exists on the computer board, the message: 'MISS!' is displayed, and this place is marked with : '.'.
-     - When the user enters a letter and number in a location where a ship has already been hit before, the following message is shown: 'You have already guessed that place!'. 
-     - The user has only 5 tries to guess where the ships are located. 
+        - when the user select a number except 1-9, the following message is displayed: '{the number} is wrong! Incorrect! You should choose 1, 2, 3, 4, 5, 6 ,7, 8 or 9'.
+         - when the user select a number between 1-9, the board game is shown with a ship is marked of the user.
+     - The following message is displayed:'Please, choose a letter between A-I.'
+        - when the user select a letter except A-I, the fellowing message is displayed: '{the letter} is wrong! Incorrect! You should choose A, B, C, D, E, F, G, H or I'. 
+    - When the user enters a letter and number where the ship exists on the computer board, the message: 'Well done!! You hit a ship!' is displayed, and this place is marked with : '★'. 
+    - When the user enters a letter and number where the ship not exists on the computer board, the message: 'You missed!' is displayed, and this place is marked with : '-'.
+    - When the user enters a letter and number in a location where a ship has already been hit before, the following message is shown: 'You have already guessed that place!'. 
+    - The user has only 10 tries to guess where the ships are located.
     
 4. End game:
 - After 5 chances to guess the ships on the board, the game ends and the message: 'GAME OVER! Thank you for plaing ' is shown.
