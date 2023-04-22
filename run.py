@@ -36,10 +36,11 @@ letters_to_numbers = {
     'I': 8
     }
 
-PLAYER_SCORE = 0
-COMPUTER_SCORE = 0
 
 continue_game_options = 'ok', 'end game'
+
+PLAYER_SCORE = 0
+COMPUTER_SCORE = 0
 
 
 def clear():
@@ -156,7 +157,7 @@ def create_random_ships(board):
 def computer_guess():
 
     """Function guessing computer play board."""
-    global COMPUTER_SCORE
+    COMPUTER_SCORE = 0
     computer_row, computer_column = randint(0, 8), randint(0, 8)
     if (player_board[computer_row][computer_column] == "-" or
             player_board[computer_row][computer_column] == "★"):

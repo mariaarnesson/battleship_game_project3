@@ -5,12 +5,17 @@
 
 # Introduction
 [View the live project here](https://battleship-game.herokuapp.com/)
+
 This Battleships game is Portfolio Project 3 - Python Essentials created for Diploma in Full Stack Software Development at [Code Institute](https://codeinstitute.net/se/) . This project is about building a command-line application that allows users to manage a common dataset about a particular domain.
 
 Battleship game is a Python Terminal Game, which runs in Heroku. 
 
 The Battleships game is played on grids on which each player's fleet of battleships are marked. The locations of the fleets are concealed from the other player. Players call shots at the other player's ships, and the objective of the game is to destroy the opposing player's fleet.
 The application provides a working battleships game for a single user to play against the computer. 
+The game is played on a 9 x 9 board.
+A player's ships are already placed on the board when the game starts. Useful information is displayed to help the user progress through the game. The first board at the top displays the current player's ship placement and guesses, and the bottom board shows their own guess history.
+
+The winner is the one who sinks all the enemy ships first!
 
 # User Experience (UX)
 ## User Stories:
