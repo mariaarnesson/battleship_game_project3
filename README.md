@@ -34,7 +34,9 @@ The winner is the one who sinks all the enemy ships first!
 
 # How to play 
 
-After pressing on run the game, entering the user's name, the user can see the game instructions and a table showing the size of the ships. The user then places ships on his board by selecting letters in a column and numbers in a row. After placing their ships, the user guesses where the ships are on the computer board. The game ends when the computer or the user guesses where all the ships are.
+After pressing on run the game, entering the user's name, the user can see the game instructions and a table showing the size of the ships. After placing the ships on game board, the user guesses where the ships are on the computer board. The game ends when the computer or the user guesses where all the ships are.
+
+Battleship game is a version of the classic [Battleship game](https://en.wikipedia.org/wiki/Battleship_(game)) game of the same name. This implementation allows for a single player match (human vs computer).
 
 # Features
 ## Existing Features
