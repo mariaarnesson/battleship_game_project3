@@ -47,25 +47,19 @@ No error founds on PEP8online.com
     - The drawing of a ship is shown.
     - An option is displayed to choose to see instructions or start the game:
         - 1. By pressing 1 the Battleship game start.
+            - The text 'Please, enter your name:' is shown.
+                - After pressing a name, the following message is displayed: 'Hello ... and welcome in my game!'
         - 2. By pressing 2 the rules of the game are shown.
-    - The text 'Please, enter your name:' is shown.
-        - After pressing a name, the following message is displayed: 'Hello ...!'
-    - After entering a name, the following message is displayed:'Press Enter to continue'.
-        - After pressing any other key on the keyboard, the game does not start.
-        - After pressing enter, game board is shown.
+            - The text : 'press enter to start a game' is shown.
+                - The text 'Please, enter your name:' is shown.
+                    - After pressing a name, the following message is displayed: 'Hello ... and welcome in my game!'
+                        - Loading of the game is displayed
+                        - The game board is shown.
 
-2. Create ships:
-- The user board shows, the user is supposed to place user's ships:
-    - The following message is displayed:'Please, choose some letter between A-G:'.
-        - When the user selects a letter between A-G, the following message is displayed: 'Please, choose the row 1-7 of the ship: '
-            - when the user select a number except 1-7, the following message is displayed: 'Incorrect! You should choose 1, 2, 3, 4, 5, 6 or 7'.
-            - when the user select a number between 1-7, the board game is shown with a ship is marked of the user.
-        - When the user selects a letter except A-G, the following message is displayed: 'Incorrect! You should choose A, B, C, D, E, F or G'.
-
-3. Play game:
+2. Play game:
 - The following information is displayed: 'GUESS LOCATIONS OF THE SHIPS ON THE COMPUTER'S GAME BOARD'.
 - The computer board is shown, the user is supposed to guess where the computer ships are located.
-     - The following message is displayed:'Please, choose some letter between A-G:'.
+     - The following message is displayed:'Please, choose the row 1-9 of the ship:
         - When the user selects a letter between A-G, the following message is displayed: 'Please, choose the row 1-7 of the ship: '
              - when the user select a number except 1-7, the following message is displayed: 'Incorrect! You should choose 1, 2, 3, 4, 5, 6 or 7'.
             - when the user select a number between 1-7, the board game is shown with a ship is marked of the user.
