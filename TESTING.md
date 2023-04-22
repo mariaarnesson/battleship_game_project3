@@ -55,7 +55,7 @@ No error founds on PEP8online.com
                     - After pressing a name, the following message is displayed: 'Hello ... and welcome in my game!'
                         - Loading of the game is displayed
                         - The game board is shown.
-
+        - 3. By pressing someting else, following message: 'Inorrect!!! You entered: {option}. Please enter 1 or 2.' is displayed. 
 2. Play game:
 - The following information is displayed: 'GUESS LOCATIONS OF THE SHIPS ON THE COMPUTER'S GAME BOARD'.
 - The computer board is shown, the user is supposed to guess where the computer ships are located.
@@ -71,7 +71,7 @@ No error founds on PEP8online.com
     - A message is displayed: 'The computer guessed row {number of row} and column {letter of column}'.
     - Futher message is displayed: 'Your battleship has been hit! or 'The computer missed!'.
     - Futher message is displayed: 'You have {number of tries} chances left!
-    - The user has only 10 tries to guess where the ships are located.
+    - The user has only 20 tries to guess where the ships are located.
     - Futher message is displayed: "To continue press 'ok' otherwise press 'end game'.
         - When a user press a word except 'ok' or 'end game', fellowing message is displayed: 'Incorrect! You should press 'ok' or 'end game'.
         - When a user press 'ok', the game will continue.
@@ -79,6 +79,12 @@ No error founds on PEP8online.com
 
     
 4. End game:
-- After 10 chances to guess the ships on the board, the game ends and the message: 'GAME OVER! Thank you for plaing ' is shown.
+- After 20 chances to guess the ships on the board, the game ends and the message: 'You ran out of turns, the game is over'. 'GAME OVER! Thank you for plaing ' is shown.
+- When the user guesses where all 10 ships are placed, the following message is shown:'Congratulations! "you have sunk all of the battleships! You have {number of tries} left."
+- When the user guesses where all 10 ships are placed, the following message is shown: 'The computer won!', 'GAME OVER! Thank you for plaing '.
+- After ending the game, the user has two options: 'Play the game again' or 'End game' 
+    - Be pressing 1, the user start to play a game from begining. 
+    - By pressing 2, the user ends the game. 
+    - By pressing something else, following message: 'You entered: {answer}. Please enter 1 or 2' is displayed. 
 
 
