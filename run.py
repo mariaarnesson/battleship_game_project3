@@ -246,8 +246,8 @@ def validate_continue_game(stop_game):
             print(Fore.RED + f" '{stop_game}' is wrong!")
             print(Fore.RED + "Please press 'ok' or 'end game'.")
     except ValueError:
-        print("\033[1;32m  Try again.")
         print(" Please press 'ok' or 'end game'.\n")
+        print("\033[1;32m  Try again.")
         return False
 
     return True
@@ -347,8 +347,9 @@ def play_game():
                 break
             else:
                 print(Fore.RED + "Incorrect!!!")
+                print(Fore.RED + "You should press 'ok' or 'end game.")
                 continue_game = input(
-                    "\033[1;32m You should press 'ok' or 'end game'.\n")
+                    "\033[1;32m Please, try again: \n")
 
 
 def play_again():

@@ -92,7 +92,9 @@ In this game a player have access to two game boards. First, the player have to 
 
 
 
-Guessed ships are marked with an '★'.The game ends when all the ships have been guessed.
+Guessed ships are marked with an '★'.
+Missed ships are marked with an '-'.
+
 ## Future Features
 - add size for ships
 
