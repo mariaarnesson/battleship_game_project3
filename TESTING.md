@@ -45,11 +45,14 @@ No error founds on PEP8online.com
 - After pressing 'RUN PROGRAM':
     - The introductory text is shown.
     - The drawing of a ship is shown.
+    - An option is displayed to choose to see instructions or start the game:
+        - 1. By pressing 1 the Battleship game start.
+        - 2. By pressing 2 the rules of the game are shown.
     - The text 'Please, enter your name:' is shown.
         - After pressing a name, the following message is displayed: 'Hello ...!'
     - After entering a name, the following message is displayed:'Press Enter to continue'.
         - After pressing any other key on the keyboard, the game does not start.
-        - After pressing enter, game instructions and a table with the number of ships are shown.
+        - After pressing enter, game board is shown.
 
 2. Create ships:
 - The user board shows, the user is supposed to place user's ships:
