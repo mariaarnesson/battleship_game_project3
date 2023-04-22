@@ -67,9 +67,18 @@ No error founds on PEP8online.com
     - When the user enters a letter and number where the ship exists on the computer board, the message: 'Well done!! You hit a ship!' is displayed, and this place is marked with : '★'. 
     - When the user enters a letter and number where the ship not exists on the computer board, the message: 'You missed!' is displayed, and this place is marked with : '-'.
     - When the user enters a letter and number in a location where a ship has already been hit before, the following message is shown: 'You have already guessed that place!'. 
+    - After a user made a choice, a message 'Press enter to continue'is displayed.
+    - A message is displayed: 'The computer guessed row {number of row} and column {letter of column}'.
+    - Futher message is displayed: 'Your battleship has been hit! or 'The computer missed!'.
+    - Futher message is displayed: 'You have {number of tries} chances left!
     - The user has only 10 tries to guess where the ships are located.
+    - Futher message is displayed: "To continue press 'ok' otherwise press 'end game'.
+        - When a user press a word except 'ok' or 'end game', fellowing message is displayed: 'Incorrect! You should press 'ok' or 'end game'.
+        - When a user press 'ok', the game will continue.
+        - When a user press 'end game', the game ends and the final message is displayed.
+
     
 4. End game:
-- After 5 chances to guess the ships on the board, the game ends and the message: 'GAME OVER! Thank you for plaing ' is shown.
+- After 10 chances to guess the ships on the board, the game ends and the message: 'GAME OVER! Thank you for plaing ' is shown.
 
 
