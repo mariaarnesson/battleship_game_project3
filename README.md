@@ -134,6 +134,7 @@ Testing information can be found in separate [testing.md](TESTING.md) file
 - [Project 3 Teplate](https://github.com/Code-Institute-Org/python-essentials-template)- this template for Python was used.
 - [PEP8](https://pep8ci.herokuapp.com/#) - this page was used for checking my code for PEP8 requirements
 - [Backgound image- a ship](https://www.freepik.com/free-vector/vector-cartoon-pirate-ship-water-sand-beach-bay_4393922.htm#query=battleship&position=3&from_view=search&track=sph) - this page was used for the background image. 
+- [Symbols to loading and ships](https://www.textfacescopy.com/loading-symbol.html) - This page was used to provide symbols to ships and loading function.
 
 
 
