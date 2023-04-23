@@ -53,6 +53,9 @@ def start_menu():
     introdcy text, indroductory text, introductory drawing,
     function to choose a option with either play a game or
     check instructions.
+
+    https://www.textfacescopy.com/loading-symbol.html
+    This page was used to provide a loading animation.
     """
     print('\033[1;32m                   LOADING...')
     print('                  [■■■■■□□□□□] 50%')
@@ -99,7 +102,6 @@ def start_game():
     Function start game. Random ships are created on player board,
     User have to enter a name, and press enter to start.
     """
-    # https://www.textfacescopy.com/loading-symbol.html
     create_random_ships(hidden_board)
     create_random_ships(player_board)
     print('\033[1;32m_________________________________________')
