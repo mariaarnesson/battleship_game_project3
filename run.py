@@ -55,7 +55,7 @@ def start_menu():
     print('                  [■■■■■□□□□□] 50%')
     time.sleep(2)
     print('                   LOADING...')
-    print('                  [■■■■■■■■■□]6 90%')
+    print('                  [■■■■■■■■■□] 90%')
     time.sleep(2)
     clear()
     print('\033[1;32m_________________________________________')
@@ -86,8 +86,9 @@ def start_menu():
     elif start == '2':
         instructions()
     else:
-        print(+ f'Inorrect!!! You entered: {start}. Please enter 1 or 2.\n')
-
+        print(Fore.RED + 'Inorrect!!!')
+        print(Fore.RED + f' You entered: {start}. Please enter 1 or 2.\n')
+        print('\033[1;32m Please, try again: ')
 
 def start_game():
     """Function start game."""
