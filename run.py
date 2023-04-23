@@ -170,7 +170,7 @@ def create_random_ships(board):
     """
     Function creating ships.
 
-    https://github.com/gbrough/battleship/blob/main/single_player.py
+    https://www.youtube.com/watch?v=tF1WRCrd_HQ&t=614s
     This tutorial was followed and some python code
     was taken and adapted to my game.
     """
@@ -206,8 +206,13 @@ def computer_guess():
 
 
 def ship_location():
-    """Function locating ship."""
-    # https://github.com/gbrough/battleship/blob/main/single_player.py
+    """
+    Function locating ship.
+
+    https://www.youtube.com/watch?v=tF1WRCrd_HQ&t=614s
+    This tutorial was followed and some python code
+    was taken and adapted to my game.
+    """
     print(
         "\033[1;32m GUESS LOCATIONS OF THE SHIPS ON THE COMPUTER'S GAME BOARD"
         )
@@ -254,8 +259,13 @@ def validate_column(values):
 
 
 def hit_ships(board):
-    """Function hitting ships."""
-    # https://github.com/gbrough/battleship/blob/main/single_player.py
+    """
+    Function hitting ships.
+
+    https://www.youtube.com/watch?v=tF1WRCrd_HQ&t=614s
+    This tutorial was followed and some python code
+    was taken and adapted to my game.
+    """
     count = 0
     for row in board:
         for column in row:
