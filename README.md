@@ -136,6 +136,7 @@ Testing information can be found in separate [testing.md](TESTING.md) file
 - [Backgound image- a ship](https://www.freepik.com/free-vector/vector-cartoon-pirate-ship-water-sand-beach-bay_4393922.htm#query=battleship&position=3&from_view=search&track=sph) - this page was used for the background image. 
 - [Symbols to loading and ships](https://www.textfacescopy.com/loading-symbol.html) - This page was used to provide symbols to ships and loading function.
 - [ASCII Art Archive](https://www.asciiart.eu/art-and-design/borders) - This page was used to provide a drawing to function of instructions.
+- [Battleship Game- You Tube](https://www.youtube.com/watch?v=tF1WRCrd_HQ&t=614s)this tutorial was followed and some JavaScript code was taken and adapted to my game.
 
 
 

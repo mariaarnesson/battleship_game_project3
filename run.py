@@ -174,7 +174,6 @@ def create_random_ships(board):
     This tutorial was followed and some python code
     was taken and adapted to my game.
     """
-    # https://github.com/gbrough/battleship/blob/main/single_player.py
     for ship in range(10):
         ship_row, ship_column = randint(0, 8), randint(0, 8)
         while board[ship_row][ship_column] == "✩":
