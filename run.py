@@ -51,6 +51,13 @@ def start_menu():
     """
     Start the game menu.
     """
+    print('\033[1;32m                   LOADING...')
+    print('                  [■■■■■□□□□□] 50%')
+    time.sleep(2)
+    print('                   LOADING...')
+    print('                  [■■■■■■■■■□]6 90%')
+    time.sleep(2)
+    clear()
     print('\033[1;32m_________________________________________')
     print('_________________________________________')
     text = '    Hello and Welcome to Battleshipgame!\n'
@@ -90,18 +97,22 @@ def start_game():
     print('\033[1;32m_________________________________________')
     message = '           battleship game                '
     print(message.upper())
-    name = input("Please, enter your name:\n")
-    print(f" Hello and welcome to my game, {name}!")
-    while name == "" or name == " ":
-        print(Fore.RED + "Error! Please, enter your name:")
-        name = input("\033[1;32m Please enter your name:\n")
-    print('\033[1;32m                   LOADING...')
-    print('                  [■■■■■□□□□□] 50%')
-    time.sleep(2)
-    print('                   LOADING...')
-    print('                  [■■■■■■■■■□]6 90%')
-    time.sleep(2)
-    clear()
+    name = " "
+    while True:
+        name = input("Please enter your name: \n")
+
+        if name.isalnum() is not True:
+            print("Incorrect! Please, provide only letters and numbers.")
+            continue
+        else:
+            print(f"Hello and welcome to my game, {name}!")
+            input("Press enter to start")
+            return name
+
+    print(f"Hello and welcome to my game, {name}!")
+    input("Press enter to start")
+    return name
+
 
 
 def instructions():
@@ -130,7 +141,7 @@ def instructions():
     print('( _ __)                                         ( _ __).')
     print('( _ __)¯`·._.·´¯`·._.·´¯¯`·._.·´¯`·._.·´¯¯`·._.·( _ __) ')
     input('press enter to start a game.')
-
+    start_game()
 
 def print_board(board):
     """Function printing board."""
@@ -363,8 +374,10 @@ def play_again():
 
 def main_menu():
     """Function main menu."""
+
     start_menu()
-    start_game()
+    create_random_ships(hidden_board)
+    create_random_ships(player_board)
     play_game()
     play_again()
 
