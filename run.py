@@ -51,8 +51,8 @@ def start_menu():
     """
     Start the game menu with loading the game function,
     introdcy text, indroductory text, introductory drawing,
-    function to choose a option with either play a game or 
-    check instructions. 
+    function to choose a option with either play a game or
+    check instructions.
     """
     print('\033[1;32m                   LOADING...')
     print('                  [■■■■■□□□□□] 50%')
@@ -95,7 +95,10 @@ def start_menu():
 
 
 def start_game():
-    """Function start game."""
+    """
+    Function start game. Random ships are created on player board,
+    User have to enter a name, and press enter to start.
+    """
     # https://www.textfacescopy.com/loading-symbol.html
     create_random_ships(hidden_board)
     create_random_ships(player_board)
@@ -107,7 +110,7 @@ def start_game():
         name = input("Please enter your name: \n")
 
         if name.isalnum() is not True:
-            print(Fore.RED + 'Incorrect!') 
+            print(Fore.RED + 'Incorrect!')
             print(Fore.RED + 'Please, provide only letters and numbers.')
             print('\033[1;32mPlease, try again: ')
             continue
