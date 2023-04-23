@@ -42,14 +42,17 @@ continue_game_options = 'ok', 'end game'
 
 def clear():
     """
-    Clear the terminal.
+    Function which is intended to clear the terminal.
     """
     os.system("cls" if os.name == "nt" else "clear")
 
 
 def start_menu():
     """
-    Start the game menu.
+    Start the game menu with loading the game function,
+    introdcy text, indroductory text, introductory drawing,
+    function to choose a option with either play a game or 
+    check instructions. 
     """
     print('\033[1;32m                   LOADING...')
     print('                  [■■■■■□□□□□] 50%')
@@ -106,7 +109,7 @@ def start_game():
         if name.isalnum() is not True:
             print(Fore.RED + 'Incorrect!') 
             print(Fore.RED + 'Please, provide only letters and numbers.')
-            print('\033[1;32m Please, try again: ')
+            print('\033[1;32mPlease, try again: ')
             continue
         else:
             print(f"Hello and welcome to my game, {name}!")
