@@ -90,6 +90,7 @@ def start_menu():
         print(Fore.RED + f' You entered: {start}. Please enter 1 or 2.\n')
         print('\033[1;32m Please, try again: ')
 
+
 def start_game():
     """Function start game."""
     # https://www.textfacescopy.com/loading-symbol.html
@@ -103,7 +104,9 @@ def start_game():
         name = input("Please enter your name: \n")
 
         if name.isalnum() is not True:
-            print("Incorrect! Please, provide only letters and numbers.")
+            print(Fore.RED + 'Incorrect!') 
+            print(Fore.RED + 'Please, provide only letters and numbers.')
+            print('\033[1;32m Please, try again: ')
             continue
         else:
             print(f"Hello and welcome to my game, {name}!")
@@ -113,7 +116,6 @@ def start_game():
     print(f"Hello and welcome to my game, {name}!")
     input("Press enter to start")
     return name
-
 
 
 def instructions():
@@ -143,6 +145,7 @@ def instructions():
     print('( _ __)¯`·._.·´¯`·._.·´¯¯`·._.·´¯`·._.·´¯¯`·._.·( _ __) ')
     input('press enter to start a game.')
     start_game()
+
 
 def print_board(board):
     """Function printing board."""
