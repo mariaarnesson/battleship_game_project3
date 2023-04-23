@@ -393,7 +393,7 @@ def play_again():
     answer = input('Enter your option here: ')
 
     if answer == '1':
-        start_game()
+        start_menu()
     elif answer == '2':
         exit()
     else:
